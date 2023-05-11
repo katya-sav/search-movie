@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ES2015",
+    "jsx": "react",
+    "strict": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  }
+}
