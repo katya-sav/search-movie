@@ -14,7 +14,6 @@ module.exports = {
         test: /\.css$/,
         use: [
           { loader: "style-loader" },
-          { loader: "css-modules-typescript-loader" },
           {
             loader: "css-loader",
             options: {
@@ -22,6 +21,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(jpg|png|gif|woff|eot|ttf|svg)/,
+        type: "asset/resource",
       },
     ],
   },

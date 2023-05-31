@@ -1,10 +1,17 @@
 import React from "react";
-import styles from "./styles.module.css";
+
+import "./GlobalStyles.css";
+import { Header } from "./components/Header/Header";
+import { BooksList } from "./components/BooksList/BooksList";
+import { useBooksList } from "./api";
 
 export const App = () => {
+  const { books, getBooks } = useBooksList();
+
   return (
-    <div>
-      <h1 className={styles.myClass}>Hello</h1>
+    <div className="GlobalStyles">
+      <Header onSearchSubmit={getBooks} />
+      <BooksList books={books} />
     </div>
   );
 };
