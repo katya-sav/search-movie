@@ -1,0 +1,12 @@
+.title {
+  margin: 20px;
+  color: #ebedf2;
+  font-size: 22px;
+}
+
+.container {
+  display: flex;
+  overflow: auto;
+  gap: 20px;
+  margin: 20px;
+}

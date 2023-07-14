@@ -1,0 +1,30 @@
+.link {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+.link:link {
+  color: #ebedf2;
+  border-bottom: 1px solid;
+}
+
+.link:visited {
+  color: #ebedf2;
+  border-bottom: 1px solid;
+}
+
+.link:focus {
+  background-color: #ebedf2;
+  color: #2a2b42;
+}
+
+.link:hover {
+  background-color: #aaa7f2;
+  color: #2a2b42;
+}
+
+.link:active {
+  background-color: #ebedf2;
+  color: #aaa7f2;
+}

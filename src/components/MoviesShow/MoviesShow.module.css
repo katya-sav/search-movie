@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  color: #aaa7f2;
+  background-color: #2a2b42;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container:hover {
+  box-shadow: 5px 10px 10px 5px rgba(61, 52, 90, 0.683);
+}

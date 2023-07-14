@@ -1,17 +1,19 @@
-import React from "react";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
-import "./GlobalStyles.css";
-import { Header } from "./components/Header/Header";
-import { BooksList } from "./components/BooksList/BooksList";
-import { useBooksList } from "./api";
+import { Header } from './components/Header'
+import { MainPage } from './pages/MainPage'
+import { SearchPage } from './pages/SearchPage'
+import { CardPage } from './pages/CardPage'
+import './GlobalStyles.css'
 
-export const App = () => {
-  const { books, getBooks } = useBooksList();
-
-  return (
-    <div className="GlobalStyles">
-      <Header onSearchSubmit={getBooks} />
-      <BooksList books={books} />
-    </div>
-  );
-};
+export const App = () => (
+  <div className="GlobalStyles">
+    <Header />
+    <Routes>
+      <Route path="*" element={<MainPage />} />
+      <Route path="/search/:searchQuery/*" element={<SearchPage />} />
+      <Route path="card/:movieId/*" element={<CardPage />} />
+    </Routes>
+  </div>
+)

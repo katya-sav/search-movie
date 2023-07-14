@@ -1,0 +1,8 @@
+.image {
+  border-radius: 5px 0 0 5px;
+}
+
+.imageError {
+  width: 342px;
+  border-radius: 5px 0 0 5px;
+}

@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-right: 5px;
+}

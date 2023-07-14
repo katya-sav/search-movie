@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #2a2b42;
+  color: #aaa7f2;
+  font-size: 18px;
+}
+
+.image {
+  border-radius: 5px 5px 0 0;
+}
+
+.imageError {
+  width: 185px;
+  border-radius: 5px 5px 0 0;
+}
+
+.name {
+  margin: 10px;
+}
+
+.description {
+  margin: 0 10px;
+  font-style: italic;
+}

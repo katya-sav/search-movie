@@ -1,31 +1,34 @@
-import React from "react";
+import React, { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { SearchBar } from "../SearchBar/SearchBar";
-import styles from "./Header.module.css";
-import image from "../../image/search-image.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { SearchBar } from '../SearchBar'
+import { Icon } from '../Icon'
+import styles from './Header.module.css'
 
-type THeaderProps = {
-  onSearchSubmit: (searchTerm: string) => Promise<void>;
-};
+export const Header = () => {
+  const navigate = useNavigate()
 
-export const Header = ({ onSearchSubmit }: THeaderProps) => {
+  const handleSearchSubmit = useCallback(
+    (searchQuery: string) => {
+      navigate(`search/${searchQuery}`)
+    },
+    [navigate],
+  )
+
   return (
     <div className={styles.header}>
-      <div className={styles.left_side}>
-        <FontAwesomeIcon
-          className={styles.button}
-          icon={faRightToBracket}
-          size="lg"
-        />
-        <h1 className={styles.title}>Find Your Book</h1>
-      </div>
-      <div className={styles.search}>
-        <h2 className={styles.text}>Enter Book Name</h2>
-        <SearchBar onSubmit={onSearchSubmit} />
-        <img className={styles.image} src={image} alt="image-book" />
-      </div>
+      <button
+        type="button"
+        className={styles.name}
+        onClick={() => navigate('/', { replace: false })}
+      >
+        Name App
+      </button>
+      <SearchBar onSubmit={handleSearchSubmit} />
+      <button className={styles.button} type="button">
+        Sign in
+        <Icon icon="signIn" size="lg" className={styles.icon} />
+      </button>
     </div>
-  );
-};
+  )
+}
