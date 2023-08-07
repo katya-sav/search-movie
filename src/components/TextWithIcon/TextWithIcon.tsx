@@ -1,15 +1,15 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from 'react'
 
-import { Icon } from "../Icon";
-import { TIconType, TIconSize } from "../../types";
-import styles from "./TextWithIcon.module.css";
+import { Icon } from '../Icon'
+import { TIconType, TIconSize } from '../../types'
+import styles from './TextWithIcon.module.css'
 
 type TTextWithIcon = {
-  text: string;
-  secondaryText?: string;
-  size: TIconSize;
-  icon: TIconType;
-};
+  text: string
+  secondaryText?: string
+  size: TIconSize
+  icon: TIconType
+}
 
 export const TextWithIcon = ({
   icon,
@@ -19,13 +19,13 @@ export const TextWithIcon = ({
 }: TTextWithIcon) => {
   const iconStyle = useMemo(() => {
     switch (icon) {
-      case "star":
-        return styles.star;
+      case 'star':
+        return styles.star
 
       default:
-        return styles.icon;
+        return styles.icon
     }
-  }, []);
+  }, [icon])
 
   return (
     <div className={styles.ratingIcon}>
@@ -33,5 +33,5 @@ export const TextWithIcon = ({
       <div className={styles.rating}>{text}</div>
       <div>{secondaryText}</div>
     </div>
-  );
-};
+  )
+}

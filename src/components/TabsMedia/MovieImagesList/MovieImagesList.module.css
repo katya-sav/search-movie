@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  gap: 20px;
+  overflow: auto;
+}
+
+.fixedWidth185 {
+  width: 185px;
+}
+
+.fixedWidth500 {
+  width: 500px;
+  object-fit: contain;
+}

@@ -1,2 +1,15 @@
-export { useAppDispatch } from "./use-app-dispatch";
-export { RootState } from "./store";
+export { useAppDispatch } from './use-app-dispatch'
+export { RootState } from './store'
+
+export * from './slices/movie-recommendations/selectors'
+export * from './slices/movie-card/selectors'
+export * from './slices/movie-images/selectors'
+export * from './slices/movie-videos/selectors'
+export * from './slices/movie-keywords/selectors'
+export * from './slices/movie-persons/selectors'
+export * from './slices/movies/selectors'
+export * from './slices/movies-by-keyword/selectors'
+export * from './slices/person-profile/selectors'
+export * from './slices/person-movies/selectors'
+export * from './slices/person-images/selectors'
+export * from './slices/modal/selectors'

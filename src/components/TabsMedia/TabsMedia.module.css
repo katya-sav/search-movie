@@ -1,0 +1,21 @@
+.container {
+  margin-top: 20px;
+}
+
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #ebedf2;
+  font-size: 22px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}

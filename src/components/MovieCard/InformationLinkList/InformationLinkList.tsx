@@ -1,13 +1,13 @@
-import React, { useCallback } from "react";
-import { Link } from "react-router-dom";
-import { TInformation } from "../../../types";
+import React, { useCallback } from 'react'
+import { Link } from 'react-router-dom'
+import { TInformation } from '../../../types'
 
-import styles from "./InformationLinkList.module.css";
+import styles from './InformationLinkList.module.css'
 
 type TInformationLinkListProps = {
-  items: TInformation[];
-  linkName?: string;
-};
+  items: TInformation[]
+  linkName?: string
+}
 
 export const InformationLinkList = ({
   items,
@@ -15,11 +15,11 @@ export const InformationLinkList = ({
 }: TInformationLinkListProps) => {
   const renderInformationLinkList = useCallback(() => {
     if (!items.length) {
-      return <span>No data available</span>;
+      return <span>No data available</span>
     }
 
     return items.map((item, i) => {
-      const isLast = i === items.length - 1;
+      const isLast = i === items.length - 1
 
       return (
         <>
@@ -27,15 +27,15 @@ export const InformationLinkList = ({
             className={styles.link}
             to={`/${linkName}/${item.id}`}
             key={item.id}
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
           >
             {item.name}
           </Link>
           {!isLast && <span>, </span>}
         </>
-      );
-    });
-  }, []);
+      )
+    })
+  }, [items, linkName])
 
-  return <div>{renderInformationLinkList()}</div>;
-};
+  return <div>{renderInformationLinkList()}</div>
+}

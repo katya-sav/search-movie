@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  color: #55519c;
+}
+
+.image {
+  margin: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.imageError {
+  width: 185px;
+  margin: 10px;
+}
+
+.text {
+  margin-bottom: 15px;
+}

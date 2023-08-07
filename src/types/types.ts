@@ -1,40 +1,82 @@
 export type TMovie = {
-  id: string;
-  title: string;
-  poster: string;
-  date: string;
-  overview: string;
-};
+  id: string
+  title: string
+  poster: string
+  date: string
+  overview: string
+}
 
 export type TMovieCard = {
-  id: string;
-  title: string;
-  plot: string;
-  poster: string;
-  year: string;
-  languages: TInformation[];
-  genres: TInformation[];
-  countries: TInformation[];
-  companies: TInformation[];
-  budget: string;
-  runtime: string;
-  rating: string;
-};
-
-export type TPerson = {
-  id: string;
-  name: string;
-  image: string;
-  description: string;
-};
+  id: string
+  title: string
+  originalTitle: string
+  plot: string
+  poster: string
+  year: string
+  languages: TInformation[]
+  genres: TInformation[]
+  countries: TInformation[]
+  companies: TInformation[]
+  budget: string
+  runtime: string
+  revenue: string
+  rating: string
+}
 
 export type TInformation = {
-  id: string;
-  name: string;
-};
+  id: string
+  name: string
+}
 
-export type TIconSize = "xl" | "sm" | "lg" | "xs";
+export type TPerson = {
+  id: string
+  name: string
+  image: string
+  description: string
+}
 
-export type TIconType = "star" | "signIn";
+export type TImage = {
+  path: string
+}
 
-export type TFetchingState = "init" | "loading" | "success" | "failure";
+export type TVideo = {
+  id: string
+  path: string
+}
+
+export type TKeyword = {
+  id: string
+  key: string
+}
+
+export type TRecommendation = {
+  id: string
+  title: string
+  poster: string
+  rating: string
+}
+
+export type TIconSize = 'xl' | 'sm' | 'lg' | 'xs'
+
+export type TIconType = 'star' | 'signIn' | 'arrowRight' | 'arrowLeft'
+
+export type TFetchingState = 'init' | 'loading' | 'success' | 'failure'
+
+export type TPersonProfile = {
+  id: string
+  name: string
+  image: string
+  gender: string
+  birthday: string
+  placeOfBirth: string
+  deathday: string
+  biography: string
+  profession: string
+}
+
+export type TPersonMovie = {
+  id: string
+  title: string
+  year: string
+  prof: string
+}

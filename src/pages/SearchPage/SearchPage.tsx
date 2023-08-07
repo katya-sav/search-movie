@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 
-import { fetchMovies } from '../../store/slices/movies-slice'
+import { fetchMovies } from '../../store/slices/movies'
 import { MoviesList } from '../../components/MoviesList'
-import { useAppDispatch, RootState } from '../../store'
+import { useAppDispatch, useMovies } from '../../store'
 
 export const SearchPage = () => {
   const { searchQuery } = useParams()
   const dispatch = useAppDispatch()
 
-  const movies = useSelector((state: RootState) => state.movies.movies)
+  const movies = useMovies(searchQuery)
 
   useEffect(() => {
     if (searchQuery) {

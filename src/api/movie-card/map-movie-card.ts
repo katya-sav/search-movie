@@ -1,9 +1,10 @@
-import { getYearFromDate } from '../../utils/get-year-from-date'
+import { getYearFromDate } from '../../utils'
 import { TMovieCard } from '../../types'
 
 export const mapMovieCard = (data: any): TMovieCard => ({
   id: data.id,
-  title: data.original_title,
+  title: data.title,
+  originalTitle: data.original_title,
   plot: data.overview,
   poster: data.poster_path,
   year: getYearFromDate(data.release_date),
@@ -13,6 +14,7 @@ export const mapMovieCard = (data: any): TMovieCard => ({
   companies: data.production_companies,
   budget: data.budget,
   runtime: data.runtime,
+  revenue: data.revenue,
   rating: data.vote_average,
   // producersList: prepareOthers("Produced by", data.fullCast.others),
   // operatorsList: prepareOthers("Cinematography by", data.fullCast.others),

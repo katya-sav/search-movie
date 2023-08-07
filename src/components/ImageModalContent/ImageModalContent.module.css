@@ -1,0 +1,11 @@
+.image {
+  height: 900px;
+  min-width: 600px;
+  max-width: 1550px;
+}
+
+.modal {
+  position: relative;
+  margin-bottom: 20px;
+  top: 55px;
+}

@@ -1,0 +1,28 @@
+.container {
+  margin: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #ebedf2;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+}
+
+.button {
+  width: 300px;
+  margin-top: 20px;
+  background-color: #ebedf2;
+  color: #55519c;
+  border: 1px solid #ebedf2;
+}
+
+.button:hover {
+  background-color: #2a2b42;
+  color: #ebedf2;
+}

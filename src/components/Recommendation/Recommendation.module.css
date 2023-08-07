@@ -1,0 +1,51 @@
+.card {
+  cursor: pointer;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 510px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  background-color: #2a2b42;
+  color: #aaa7f2;
+}
+
+.container:hover .overlay {
+  transform: translateY(0%);
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 5px 5px;
+  background-color: rgba(1, 1, 1, 0.5);
+  color: #ebedf2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+}
+
+.title {
+  padding: 25px 5px 0;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.image {
+  height: 410px;
+}
+
+.imageError {
+  height: 410px;
+}

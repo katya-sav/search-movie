@@ -1,19 +1,34 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import cx from 'classnames'
 
 import { Person } from '../Person/Person'
+import { ButtonRight } from '../ButtonRight'
 import { TPerson } from '../../types'
 import styles from './PersonsList.module.css'
 
 type TPersonsListProps = {
+  movieId: string
   items: TPerson[]
   title: string
+  viewAll?: boolean
+  className?: string
 }
 
-export const PersonsList = ({ items, title }: TPersonsListProps) => {
+export const PersonsList = ({
+  movieId,
+  items,
+  title,
+  viewAll,
+  className,
+}: TPersonsListProps) => {
+  const navigate = useNavigate()
+
   const persons = useMemo(
     () =>
-      items.map(item => (
+      items?.map(item => (
         <Person
+          personId={item.id}
           key={item.id}
           namePerson={item.name}
           image={item.image}
@@ -23,6 +38,10 @@ export const PersonsList = ({ items, title }: TPersonsListProps) => {
     [items],
   )
 
+  const navigateToCast = useCallback(() => {
+    navigate(`/persons/${movieId}`, { replace: false })
+  }, [movieId, navigate])
+
   if (!items.length) {
     return null
   }
@@ -30,7 +49,12 @@ export const PersonsList = ({ items, title }: TPersonsListProps) => {
   return (
     <div>
       <div className={styles.title}>{title}</div>
-      <div className={styles.container}>{persons}</div>
+      <div className={cx(styles.container, className)}>
+        {persons}
+        {viewAll && (
+          <ButtonRight onClick={navigateToCast} title="View all cast" />
+        )}
+      </div>
     </div>
   )
 }

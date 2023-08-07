@@ -1,0 +1,21 @@
+.image {
+  width: 342px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.imageError {
+  width: 342px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.button {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.button:hover {
+  background-color: #ebedf2;
+}

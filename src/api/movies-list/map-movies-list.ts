@@ -1,4 +1,4 @@
-import { getYearFromDate } from '../../utils/get-year-from-date'
+import { getYearFromDate } from '../../utils'
 import { TMovie } from '../../types'
 
 export const mapMoviesList = (data: any): TMovie[] =>

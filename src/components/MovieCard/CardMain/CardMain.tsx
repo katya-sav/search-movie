@@ -1,21 +1,19 @@
-import React from "react";
+import React from 'react'
 
-import { InformationBlock } from "../InformationBlock";
-import { validateText } from "../../../utils/validate-text";
-import { TMovieCard } from "../../../types";
-import styles from "./CardMain.module.css";
+import { InformationBlock } from '../InformationBlock'
+import { getValidateText } from '../../../utils'
+import { TMovieCard } from '../../../types'
+import styles from './CardMain.module.css'
 
 type TCardMainProps = {
-  movieCard: TMovieCard;
-};
+  movieCard: TMovieCard
+}
 
-export const CardMain = ({ movieCard }: TCardMainProps) => {
-  return (
-    <div className={styles.main}>
-      <div className={styles.year}>Year: {validateText(movieCard.year)}</div>
-      <div>
-        <InformationBlock movieCard={movieCard} />
-      </div>
+export const CardMain = ({ movieCard }: TCardMainProps) => (
+  <div className={styles.main}>
+    <div className={styles.year}>Year: {getValidateText(movieCard.year)}</div>
+    <div>
+      <InformationBlock movieCard={movieCard} />
     </div>
-  );
-};
+  </div>
+)

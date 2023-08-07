@@ -1,22 +1,20 @@
-import React from "react";
+import React from 'react'
 
-import { Rating } from "../../Rating";
-import { TMovieCard } from "../../../types";
-import { validateText } from "../../../utils/validate-text";
-import styles from "./CardRating.module.css";
+import { Rating } from '../../Rating'
+import { TMovieCard } from '../../../types'
+import { getValidateText } from '../../../utils'
+import styles from './CardRating.module.css'
 
 type TCardRatingProps = {
-  movieCard: TMovieCard;
-};
+  movieCard: TMovieCard
+}
 
-export const CardRating = ({ movieCard }: TCardRatingProps) => {
-  return (
-    <div className={styles.rating}>
-      <Rating
-        title="Rating"
-        icon="star"
-        ratingText={validateText(movieCard.rating)}
-      />
-    </div>
-  );
-};
+export const CardRating = ({ movieCard }: TCardRatingProps) => (
+  <div className={styles.rating}>
+    <Rating
+      title="Rating"
+      icon="star"
+      ratingText={getValidateText(movieCard.rating)}
+    />
+  </div>
+)

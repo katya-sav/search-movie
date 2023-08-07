@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react'
 
-import { TextWithIcon } from "../TextWithIcon";
-import { TIconType } from "../../types";
-import styles from "./Rating.module.css";
+import { TextWithIcon } from '../TextWithIcon'
+import { getNumberFromRating } from '../../utils'
+import { TIconType } from '../../types'
+import styles from './Rating.module.css'
 
 type TRating = {
-  ratingText: string;
-  additionalText?: string;
-  title: string;
-  icon: TIconType;
-};
+  ratingText: string
+  additionalText?: string
+  title: string
+  icon: TIconType
+}
 
 export const Rating = ({
   ratingText,
@@ -17,7 +18,7 @@ export const Rating = ({
   title,
   icon,
 }: TRating) => {
-  const secondaryText = additionalText ? `/${additionalText} votes` : undefined;
+  const secondaryText = additionalText ? `/${additionalText} votes` : undefined
 
   return (
     <div className={styles.ratingInner}>
@@ -25,9 +26,9 @@ export const Rating = ({
       <TextWithIcon
         icon={icon}
         size="xl"
-        text={Number(`${ratingText}`).toFixed(1)}
+        text={getNumberFromRating(ratingText)}
         secondaryText={secondaryText}
       />
     </div>
-  );
-};
+  )
+}

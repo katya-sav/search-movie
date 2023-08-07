@@ -1,25 +1,43 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { Poster } from "./Poster";
-import { Details } from "./Details";
-import { TMovie } from "../../types";
-import styles from "./MoviesShow.module.css";
+import { Poster } from './Poster'
+import { Details } from './Details'
+import { TMovie } from '../../types'
+import styles from './MoviesShow.module.css'
 
 type TMoviesShowProps = {
-  movie: TMovie;
-};
+  movie: TMovie
+}
 
 export const MoviesShow = ({ movie }: TMoviesShowProps) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+
+  const handleNavigate = useCallback(() => {
+    navigate(`/card/${movie.id}`, { replace: false })
+  }, [navigate, movie.id])
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+
+        handleNavigate()
+      }
+    },
+    [handleNavigate],
+  )
 
   return (
     <div
+      onClick={handleNavigate}
+      onKeyDown={handleKeyDown}
       className={styles.container}
-      onClick={() => navigate(`/card/${movie.id}`, { replace: false })}
+      role="button"
+      tabIndex={0}
     >
       <Poster movie={movie} />
       <Details movie={movie} />
     </div>
-  );
-};
+  )
+}
