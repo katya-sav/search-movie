@@ -1,0 +1,29 @@
+.image {
+  height: 180px;
+  cursor: pointer;
+}
+
+.imageError {
+  height: 180px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .image {
+    height: 220px;
+  }
+
+  .imageError {
+    height: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    height: 280px;
+  }
+
+  .imageError {
+    height: 280px;
+  }
+}

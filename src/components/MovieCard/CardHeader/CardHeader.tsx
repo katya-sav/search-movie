@@ -10,7 +10,8 @@ type TCardHeaderProps = {
 
 export const CardHeader = ({ movieCard }: TCardHeaderProps) => (
   <div className={styles.header}>
-    <h1 className={styles.title}>{getValidateText(movieCard.title)}</h1>
-    <h3>Description: {getValidateText(movieCard.plot)}</h3>
+    <div className={styles.title}>{getValidateText(movieCard.title)}</div>
+    <div className={styles.subtitle}>Description:</div>
+    <div className={styles.description}>{getValidateText(movieCard.plot)}</div>
   </div>
 )

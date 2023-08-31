@@ -1,39 +1,41 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+import cx from 'classnames'
 // import { useDispatch, useSelector } from "react-redux";
 
 // import { changeSearchTerm } from "../../store/slices/movies-slice";
-import styles from "./SearchBar.module.css";
+import styles from './SearchBar.module.css'
 
 type TSearchBarProps = {
-  onSubmit: (searchTerm: string) => void;
-};
+  onSubmit: (searchTerm: string) => void
+  className?: string
+}
 
-export const SearchBar = ({ onSubmit }: TSearchBarProps) => {
-  const [searchTerm, setSearchTerm] = useState("");
+export const SearchBar = ({ onSubmit, className }: TSearchBarProps) => {
+  const [searchTerm, setSearchTerm] = useState('')
 
   const handleFormSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    onSubmit(searchTerm);
-  };
+    onSubmit(searchTerm)
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
         <input
-          className={styles.input}
+          className={cx(styles.input, className)}
           value={searchTerm}
           placeholder="Enter Movie"
           onChange={handleChange}
         />
       </form>
     </div>
-  );
-};
+  )
+}
 
 // export const SearchBar = ({ onSubmit }: TSearchBarProps) => {
 //   const dispatch = useDispatch();

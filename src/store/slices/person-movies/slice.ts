@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 import { createThunk } from '../../create-thunk'
-import { getPersonMovies } from '../../../api/person-movies'
+import { getPersonMovies } from '../../../api'
 import { TPersonMoviesSlice } from './types'
 
 export const fetchPersonMovies = createThunk(

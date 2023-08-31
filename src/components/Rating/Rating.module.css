@@ -2,9 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 18px;
+  font-size: 10px;
 }
 
 .ratingTitle {
-  font-size: 24px;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .ratingInner {
+    font-size: 16px;
+  }
+
+  .ratingTitle {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ratingInner {
+    font-size: 18px;
+  }
+
+  .ratingTitle {
+    font-size: 24px;
+  }
 }

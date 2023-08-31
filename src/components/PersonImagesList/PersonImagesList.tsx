@@ -23,7 +23,7 @@ export const PersonImagesList = ({
   }, [navigate, personId])
 
   const renderPersonImage = personImages.map(personImage => (
-    <PersonImage personImage={personImage} />
+    <PersonImage key={personId} personImage={personImage} />
   ))
 
   return (

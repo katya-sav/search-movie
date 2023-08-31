@@ -1,0 +1,190 @@
+.wrapper {
+  margin: 15px 10px 10px;
+  border-radius: 4px;
+  animation: wrapper-loading 1.5s linear infinite alternate;
+}
+
+@keyframes wrapper-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+.section {
+  display: flex;
+}
+
+.image {
+  height: 213px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 4px 0 0 4px;
+  color: #c3cce2;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 213px;
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 0 4px 4px 0;
+}
+
+.title {
+  height: 24px;
+  width: 50%;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.subtitle {
+  height: 10px;
+  width: 70px;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.description {
+  height: 40px;
+  width: 95%;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.year {
+  height: 10px;
+  width: 50px;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.text {
+  height: 10px;
+  width: 50%;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.companies {
+  height: 28px;
+  width: 70%;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.rating {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 20px 15px 10px;
+  }
+
+  .image {
+    height: 413px;
+    width: 280px;
+    padding: 10px;
+  }
+
+  .card {
+    height: 413px;
+    margin-top: 20px;
+  }
+
+  .title {
+    height: 24px;
+    width: 220px;
+    margin: 0 0 10px 10px;
+  }
+
+  .subtitle {
+    height: 16px;
+    width: 100px;
+    margin: 0 0 10px 10px;
+  }
+
+  .description {
+    height: 60px;
+    width: 90%;
+    margin: 0 0 10px 10px;
+  }
+
+  .year {
+    height: 16px;
+    width: 80px;
+    margin: 0 0 10px 10px;
+  }
+
+  .text {
+    height: 16px;
+    width: 50%;
+    margin: 0 0 10px 10px;
+  }
+
+  .companies {
+    height: 22px;
+    width: 70%;
+    margin: 0 0 10px 10px;
+  }
+
+  .rating {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    height: 513px;
+    width: 342px;
+    padding: 10px;
+  }
+
+  .card {
+    height: 513px;
+    margin-top: 20px;
+  }
+
+  .title {
+    height: 32px;
+    width: 280px;
+    margin: 0 0 15px 20px;
+  }
+
+  .subtitle {
+    height: 18px;
+    width: 120px;
+    margin: 0 0 15px 20px;
+  }
+
+  .description {
+    height: 80px;
+    margin: 0 0 15px 20px;
+  }
+
+  .year {
+    height: 18px;
+    width: 100px;
+    margin: 0 0 15px 20px;
+  }
+
+  .text {
+    height: 18px;
+    margin: 0 0 15px 20px;
+  }
+
+  .companies {
+    height: 24px;
+    margin: 0 0 15px 20px;
+  }
+}

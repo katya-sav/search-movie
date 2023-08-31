@@ -2,14 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
   width: 100%;
-  padding: 20px;
   background-color: #2a2b42;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.683);
 }
 
 .name {
-  font-size: 30px;
+  font-size: 20px;
+  margin-right: 10px;
   font-weight: bold;
   color: #aaa7f2;
   background-color: #2a2b42;
@@ -17,17 +18,13 @@
   cursor: pointer;
 }
 
-.button {
-  font-size: 20px;
-  margin-left: 20px;
-  padding: 10px;
-  color: #aaa7f2;
-  background-color: #2a2b42;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
+@media (min-width: 768px) {
+  .header {
+    padding: 20px;
+  }
 
-.icon {
-  margin-left: 5px;
+  .name {
+    font-size: 30px;
+    margin: 0;
+  }
 }

@@ -33,9 +33,12 @@ export const PageTitleBlock = ({
         errorClassName={styles.imageError}
       />
       <div className={styles.details}>
-        <h2 className={styles.text}>{title}</h2>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.text}>Year: {year}</div>
-        <ButtonBack title="Back" onClick={handleClick} />
+        <div className={styles.button}>
+          {' '}
+          <ButtonBack title="Back" onClick={handleClick} />
+        </div>
       </div>
     </div>
   )

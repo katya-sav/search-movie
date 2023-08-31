@@ -1,27 +1,53 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  margin: 20px;
-  margin-left: 0;
+  margin: 10px 0;
 }
 
 .year {
   width: 10%;
-  margin: 5px;
+  margin-right: 5px;
 }
 
 .titleButton {
   width: 60%;
-  margin: 5px;
+  margin: 0 5px;
   color: #2a2b42;
   background-color: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 10px;
   cursor: pointer;
 }
 
 .prof {
   width: 30%;
-  margin: 5px;
+  margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+  .year {
+    margin: 5px;
+  }
+
+  .titleButton {
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .prof {
+    margin: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    justify-content: space-between;
+    margin: 20px;
+    margin-left: 0;
+  }
+
+  .titleButton {
+    font-size: 18px;
+  }
 }

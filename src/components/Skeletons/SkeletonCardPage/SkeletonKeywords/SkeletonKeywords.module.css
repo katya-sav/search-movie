@@ -1,0 +1,118 @@
+.wrapper {
+  margin: 10px 10px 0 0;
+  padding: 10px;
+  border-radius: 4px;
+  animation: wrapper-loading 1.5s linear infinite alternate;
+}
+
+@keyframes wrapper-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+.title {
+  height: 14px;
+  width: 70px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.keyword {
+  height: 15px;
+  width: 105px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.keywordBig {
+  height: 15px;
+  width: 55px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.keywordOther {
+  height: 20px;
+  width: 95px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 0;
+    padding: 0;
+    animation: none;
+  }
+
+  .title {
+    height: 20px;
+    width: 70px;
+    margin: 10px 0 15px 0;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .keyword {
+    height: 35px;
+    width: 80px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .keywordBig {
+    height: 25px;
+    width: 65px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .keywordOther {
+    height: 30px;
+    width: 85px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  @keyframes element-loading {
+    0% {
+      background-color: hsl(218, 37%, 81%);
+    }
+    100% {
+      background-color: hsl(219, 16%, 60%);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    height: 22px;
+    width: 120px;
+    margin: 30px 0 20px 0;
+  }
+
+  .keyword {
+    height: 35px;
+    width: 130px;
+  }
+
+  .keywordBig {
+    height: 25px;
+    width: 85px;
+  }
+
+  .keywordOther {
+    height: 30px;
+    width: 105px;
+  }
+}

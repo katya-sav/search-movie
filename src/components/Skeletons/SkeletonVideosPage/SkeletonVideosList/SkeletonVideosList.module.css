@@ -1,0 +1,52 @@
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 20px;
+}
+
+.card {
+  list-style-type: none;
+}
+
+.video {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #55519c;
+  animation: icon-loading 1.5s linear infinite alternate;
+}
+
+@keyframes icon-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+@media (min-width: 768px) {
+  .list {
+    margin-bottom: 5px;
+    gap: 15px;
+  }
+
+  .video {
+    width: 500px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list {
+    gap: 20px;
+  }
+
+  .video {
+    width: 540px;
+    height: 230px;
+  }
+}

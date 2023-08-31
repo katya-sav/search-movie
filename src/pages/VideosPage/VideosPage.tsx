@@ -1,32 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
-import { fetchMovieVideos } from '../../store/slices/movie-videos'
-import { fetchMovieCard } from '../../store/slices/movie-card'
-import { MovieVideosList } from '../../components/TabsMedia/MovieVideosList'
+import { MovieVideosList } from '../../components/MovieVideosList'
 import { ScrollToTop } from '../../utils/components'
 import { PageTitleBlock } from '../../components/PageTitleBlock'
-import {
-  useAppDispatch,
-  useMovieTitlePoster,
-  useMovieVideos,
-} from '../../store'
+import { SkeletonVideosPage } from '../../components/Skeletons'
+
 import styles from './VideosPage.module.css'
+import { useVideosPage } from './hooks'
 
 export const VideosPage = () => {
   const { movieId } = useParams()
-  const dispatch = useAppDispatch()
 
-  const { title, poster, year } = useMovieTitlePoster(movieId)
-
-  const movieVideos = useMovieVideos(movieId)
-
-  useEffect(() => {
-    if (movieId) {
-      dispatch(fetchMovieVideos(movieId))
-      dispatch(fetchMovieCard(movieId))
-    }
-  }, [movieId, dispatch])
+  const { loading, videos, title, poster, year } = useVideosPage(movieId)
 
   if (!movieId) {
     return null
@@ -40,17 +26,23 @@ export const VideosPage = () => {
           element={
             <>
               <ScrollToTop />
-              {title && poster && year && (
-                <PageTitleBlock
-                  title={title}
-                  poster={poster}
-                  year={year}
-                  movieId={movieId}
-                />
+              {loading ? (
+                <SkeletonVideosPage />
+              ) : (
+                <div>
+                  {title && poster && year && (
+                    <PageTitleBlock
+                      title={title}
+                      poster={poster}
+                      year={year}
+                      movieId={movieId}
+                    />
+                  )}
+                  <div className={styles.section}>
+                    <MovieVideosList className={styles.list} videos={videos} />
+                  </div>
+                </div>
               )}
-              <div className={styles.section}>
-                <MovieVideosList className={styles.list} videos={movieVideos} />
-              </div>
             </>
           }
         />

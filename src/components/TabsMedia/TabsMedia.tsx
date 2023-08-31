@@ -6,8 +6,8 @@ import { fetchMovieVideos } from '../../store/slices/movie-videos'
 import { TabNavItem } from './TabNavItem'
 import { TabView } from './TabView'
 import { TabContent } from './TabContent'
-import { MovieImagesList } from './MovieImagesList'
-import { MovieVideosList } from './MovieVideosList'
+import { MovieImagesList } from '../MovieImagesList'
+import { MovieVideosList } from '../MovieVideosList'
 import {
   useAppDispatch,
   useMovieBackdrops,
@@ -70,7 +70,11 @@ export const TabsMedia = () => {
           id={1}
           activeTab={activeTab}
           content={
-            <MovieImagesList images={moviePosters.slice(0, 20)} size="w185" />
+            <MovieImagesList
+              images={moviePosters.slice(0, 20)}
+              size="w185"
+              width={185}
+            />
           }
         />
         <TabContent
@@ -80,6 +84,7 @@ export const TabsMedia = () => {
             <MovieImagesList
               images={movieBackdrops.slice(0, 20)}
               size="original"
+              width={180}
             />
           }
         />

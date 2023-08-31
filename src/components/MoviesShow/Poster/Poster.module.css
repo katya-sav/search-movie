@@ -1,9 +1,29 @@
 .image {
   border-radius: 5px 0 0 5px;
-  width: 342px;
+  width: 150px;
 }
 
 .imageError {
-  width: 342px;
+  width: 150px;
   border-radius: 5px 0 0 5px;
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 300px;
+  }
+
+  .imageError {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    width: 342px;
+  }
+
+  .imageError {
+    width: 342px;
+  }
 }

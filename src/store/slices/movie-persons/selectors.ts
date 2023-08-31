@@ -12,3 +12,6 @@ export const useMovieCrew = (movieId: string | undefined) =>
   useSelector((state: RootState) =>
     getListSafe(state.moviePersons.movieCrew, movieId),
   )
+
+export const useMoviePersonsLoading = () =>
+  useSelector((state: RootState) => state.moviePersons.state === 'loading')

@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 import { createThunk } from '../../create-thunk'
-import { getMoviesListByKeywords } from '../../../api/movies-list-by-keywords'
+import { getMoviesListByKeyword } from '../../../api'
 import { TMoviesSliceState } from '../types'
 
 export const fetchMoviesByKeyword = createThunk(
-  'moviesByKeyword/getmoviesByKeyword',
+  'moviesByKeyword/getMoviesByKeyword',
   async (keyId: string) => {
-    const response = await getMoviesListByKeywords(keyId)
+    const response = await getMoviesListByKeyword(keyId)
 
     if (response.type === 'success') {
       return { keyId, data: response.data }

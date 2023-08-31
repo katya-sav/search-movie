@@ -1,0 +1,27 @@
+.fixedWidth165 {
+  width: 100px;
+}
+
+.fixedWidth480 {
+  width: 260px;
+}
+
+@media (min-width: 768px) {
+  .fixedWidth165 {
+    width: 120px;
+  }
+
+  .fixedWidth480 {
+    width: 280px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .fixedWidth165 {
+    width: 165px;
+  }
+
+  .fixedWidth480 {
+    width: 480px;
+  }
+}

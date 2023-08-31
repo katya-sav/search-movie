@@ -1,14 +1,15 @@
 .button {
   display: flex;
   align-items: center;
-  margin-left: 15px;
-  padding: 10px;
-  min-width: 165px;
+  justify-content: center;
+  margin-left: 5px;
+  padding: 5px;
+  min-width: 90px;
   border: 2px solid #2a2b42;
   border-radius: 5px;
   color: #2a2b42;
   background-color: #aaa7f2;
-  font-size: 18px;
+  font-size: 10px;
   cursor: pointer;
 }
 
@@ -17,5 +18,29 @@
 }
 
 .icon {
-  margin-left: 15px;
+  margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button {
+    margin-left: 15px;
+    padding: 10px;
+    min-width: 150px;
+    font-size: 16px;
+  }
+
+  .icon {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button {
+    font-size: 18px;
+    min-width: 165px;
+  }
+
+  .icon {
+    margin-left: 15px;
+  }
 }

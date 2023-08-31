@@ -1,18 +1,22 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 import { TInformation } from '../../../types'
 
 import styles from './InformationLinkList.module.css'
 
 type TInformationLinkListProps = {
+  linkType: 'company' | 'genre'
   items: TInformation[]
-  linkName?: string
 }
 
 export const InformationLinkList = ({
+  linkType,
   items,
-  linkName,
 }: TInformationLinkListProps) => {
+  const navigate = useNavigate()
+
   const renderInformationLinkList = useCallback(() => {
     if (!items.length) {
       return <span>No data available</span>
@@ -21,21 +25,49 @@ export const InformationLinkList = ({
     return items.map((item, i) => {
       const isLast = i === items.length - 1
 
+      const handleNavigateCompany = () => {
+        navigate(`/${linkType}/${item.id}`, { replace: false })
+      }
+
+      const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Enter') {
+          e.preventDefault()
+
+          handleNavigateCompany()
+        }
+      }
+
       return (
         <>
-          <Link
+          <span
+            // eslint-disable-next-line react/no-array-index-key
+            key={i}
+            role="button"
             className={styles.link}
-            to={`/${linkName}/${item.id}`}
-            key={item.id}
-            onClick={e => e.stopPropagation()}
+            onClick={handleNavigateCompany}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
           >
             {item.name}
-          </Link>
+          </span>
+
           {!isLast && <span>, </span>}
         </>
       )
     })
-  }, [items, linkName])
+  }, [navigate, items, linkType])
 
   return <div>{renderInformationLinkList()}</div>
 }
+
+/* <>
+<Link
+  className={styles.link}
+  to={`/${linkName}/${item.id}`}
+  key={item.id}
+  onClick={handleNavigate}
+>
+  {item.name}
+</Link>
+{!isLast && <span>, </span>}
+</> */

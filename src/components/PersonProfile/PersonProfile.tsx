@@ -9,10 +9,11 @@ import {
   usePersonProfCast,
   usePersonProfCrew,
 } from '../../store'
-import { TPersonProfile } from '../../types'
-import styles from './PersonProfile.module.css'
 import { PersonBiography } from './PersonBiography'
 import { PersonPhoto } from './PersonPhoto'
+import { TPersonProfile } from '../../types'
+
+import styles from './PersonProfile.module.css'
 
 type TPersonProfileProps = {
   personProfile: TPersonProfile | null
@@ -39,7 +40,7 @@ export const PersonProfile = ({ personProfile }: TPersonProfileProps) => {
   return (
     <div className={styles.container}>
       <div>
-        <h2 className={styles.title}> {personProfile.name}</h2>
+        <div className={styles.title}> {personProfile.name}</div>
         <PersonPhoto personProfile={personProfile} />
         <PersonalInformation personProfile={personProfile} />
       </div>

@@ -5,6 +5,9 @@ import {
   faRightToBracket,
   faArrowRight,
   faArrowLeft,
+  faFileImage,
+  faImagePortrait,
+  faVideo,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { TIconType, TIconSize } from '../../types'
@@ -29,6 +32,18 @@ export const Icon = ({ icon, size, className }: TIconProps) => {
 
       case 'arrowLeft':
         return faArrowLeft
+
+      case 'image':
+        return faFileImage
+
+      case 'portrait':
+        return faImagePortrait
+
+      case 'video':
+        return faVideo
+
+      // case 'github':
+      //   return faGithub
 
       default:
         return null

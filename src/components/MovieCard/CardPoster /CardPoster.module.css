@@ -1,9 +1,73 @@
+.wrapper {
+  cursor: pointer;
+  width: 150px;
+}
+
+.poster {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+  height: 100%;
+}
+
+.poster:hover .overlay {
+  transform: translateY(0%);
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(1, 1, 1, 0.5);
+  color: #ebedf2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+}
+
 .image {
-  width: 342px;
+  width: 150px;
+  height: 100%;
   border-radius: 5px 0 0 5px;
 }
 
 .imageError {
-  width: 342px;
+  width: 150px;
+  height: 100%;
   border-radius: 5px 0 0 5px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: 300px;
+  }
+
+  .image {
+    width: 300px;
+  }
+
+  .imageError {
+    width: 300px;
+  }
+
+  .overlay {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 342px;
+  }
+
+  .image {
+    width: 342px;
+  }
+
+  .imageError {
+    width: 342px;
+  }
 }

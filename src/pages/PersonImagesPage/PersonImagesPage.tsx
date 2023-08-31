@@ -1,22 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
-import { fetchPersonImages } from '../../store/slices/person-images'
-
 import { PersonImagesList } from '../../components/PersonImagesList'
-import { useAppDispatch, usePersonImages } from '../../store'
+import { SkeletonPersonImagesPage } from '../../components/Skeletons'
+import { usePersonImagesPage } from './hooks'
 
 export const PersonImagesPage = () => {
   const { personId } = useParams()
-  const dispatch = useAppDispatch()
 
-  const images = usePersonImages(personId)
-
-  useEffect(() => {
-    if (personId) {
-      dispatch(fetchPersonImages(personId))
-    }
-  }, [personId, dispatch])
+  const { loading, images } = usePersonImagesPage(personId)
 
   if (!personId) {
     return null
@@ -28,7 +20,14 @@ export const PersonImagesPage = () => {
         <Route
           path="/"
           element={
-            <PersonImagesList personImages={images} personId={personId} />
+            <>
+              {' '}
+              {loading ? (
+                <SkeletonPersonImagesPage />
+              ) : (
+                <PersonImagesList personImages={images} personId={personId} />
+              )}
+            </>
           }
         />
       </Routes>

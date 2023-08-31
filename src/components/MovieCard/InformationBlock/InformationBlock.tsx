@@ -3,25 +3,24 @@ import React from 'react'
 import { Information } from '../Information'
 import { TMovieCard } from '../../../types'
 
+import styles from './InformationBlock.module.css'
+
 type TInformationBlockProps = {
   movieCard: TMovieCard
 }
 
 export const InformationBlock = ({ movieCard }: TInformationBlockProps) => (
-  <div>
+  <div className={styles.block}>
     <Information title="Language:" items={movieCard.languages} />
-    <Information
-      withLink
-      title="Genre:"
-      linkName="genre"
-      items={movieCard.genres}
-    />
+    <Information linkType="genre" title="Genre:" items={movieCard.genres} />
     <Information title="Country:" items={movieCard.countries} />
-    <Information
-      withLink
-      title="Companies:"
-      linkName="companies"
-      items={movieCard.companies}
-    />
+    <div className={styles.company}>
+      {' '}
+      <Information
+        linkType="company"
+        title="Company:"
+        items={movieCard.companies}
+      />
+    </div>{' '}
   </div>
 )

@@ -1,32 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
-import { fetchMovieImages } from '../../store/slices/movie-images'
-import { fetchMovieCard } from '../../store/slices/movie-card'
-import { MovieImagesList } from '../../components/TabsMedia/MovieImagesList'
+import { MovieImagesList } from '../../components/MovieImagesList'
 import { ScrollToTop } from '../../utils/components'
 import { PageTitleBlock } from '../../components/PageTitleBlock'
-import {
-  useAppDispatch,
-  useMovieTitlePoster,
-  useMoviePosters,
-} from '../../store'
+import { usePostersPage } from './hooks'
+import { SkeletonImagesPage } from '../../components/Skeletons'
+
 import styles from './PostersPage.module.css'
 
 export const PostersPage = () => {
   const { movieId } = useParams()
-  const dispatch = useAppDispatch()
 
-  const { title, poster, year } = useMovieTitlePoster(movieId)
-
-  const moviePosters = useMoviePosters(movieId)
-
-  useEffect(() => {
-    if (movieId) {
-      dispatch(fetchMovieImages(movieId))
-      dispatch(fetchMovieCard(movieId))
-    }
-  }, [movieId, dispatch])
+  const { posters, loading, title, poster, year } = usePostersPage(movieId)
 
   if (!movieId) {
     return null
@@ -40,22 +26,28 @@ export const PostersPage = () => {
           element={
             <>
               <ScrollToTop />
-              {title && poster && year && (
-                <PageTitleBlock
-                  title={title}
-                  poster={poster}
-                  year={year}
-                  movieId={movieId}
-                />
+              {loading ? (
+                <SkeletonImagesPage width={165} />
+              ) : (
+                <div>
+                  {title && poster && year && (
+                    <PageTitleBlock
+                      title={title}
+                      poster={poster}
+                      year={year}
+                      movieId={movieId}
+                    />
+                  )}
+                  <div>
+                    <MovieImagesList
+                      images={posters}
+                      className={styles.list}
+                      size="w185"
+                      width={185}
+                    />
+                  </div>
+                </div>
               )}
-              <div className={styles.section}>
-                <MovieImagesList
-                  images={moviePosters}
-                  className={styles.list}
-                  size="w185"
-                  width={185}
-                />
-              </div>
             </>
           }
         />

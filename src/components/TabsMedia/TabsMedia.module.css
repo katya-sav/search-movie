@@ -1,5 +1,5 @@
 .container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .tabHeader {
@@ -7,15 +7,42 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  overflow: auto;
 }
 
 .title {
   color: #ebedf2;
-  font-size: 22px;
+  font-size: 14px;
+  margin-right: 5px;
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
-  width: 500px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .nav {
+    justify-content: space-between;
+    width: 450px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .nav {
+    width: 500px;
+  }
 }

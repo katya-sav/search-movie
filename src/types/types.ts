@@ -23,9 +23,26 @@ export type TMovieCard = {
   rating: string
 }
 
+export type TCompany = {
+  id: string
+  name: string
+  headquarters: string
+  homepage: string
+  logo: string
+  country: string
+  parentCompany: TParentCompany | null
+}
+
+export type TParentCompany = {
+  id: string
+  name: string
+  logo_path: string
+}
+
 export type TInformation = {
   id: string
   name: string
+  english_name?: string
 }
 
 export type TPerson = {
@@ -58,7 +75,15 @@ export type TRecommendation = {
 
 export type TIconSize = 'xl' | 'sm' | 'lg' | 'xs'
 
-export type TIconType = 'star' | 'signIn' | 'arrowRight' | 'arrowLeft'
+export type TIconType =
+  | 'star'
+  | 'signIn'
+  | 'arrowRight'
+  | 'arrowLeft'
+  | 'image'
+  | 'portrait'
+  | 'video'
+  | 'github'
 
 export type TFetchingState = 'init' | 'loading' | 'success' | 'failure'
 

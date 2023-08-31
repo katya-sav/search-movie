@@ -12,6 +12,7 @@ export const Details = ({ movie }: TDetailsProps) => (
   <div className={styles.container}>
     <h2 className={styles.title}>{movie.title}</h2>
     <div className={styles.year}>Year: {getValidateText(movie.date)}</div>
-    <div>Description: {getValidateText(movie.overview)}</div>
+    <div>Description:</div>
+    <div className={styles.description}>{getValidateText(movie.overview)}</div>
   </div>
 )

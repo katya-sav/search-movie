@@ -1,12 +1,12 @@
 .ratingIcon {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .rating {
-  margin-left: 10px;
-  font-size: 22px;
+  margin-left: 5px;
+  font-size: 10px;
 }
 
 .icon {
@@ -14,5 +14,22 @@
 }
 
 .star {
+  width: 10px;
   color: rgb(255, 230, 0);
+}
+
+@media (min-width: 768px) {
+  .star {
+    width: 100%;
+  }
+
+  .rating {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rating {
+    font-size: 22px;
+  }
 }

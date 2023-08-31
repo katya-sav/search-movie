@@ -4,6 +4,7 @@ import {
   getPersonGender,
   getAgeFromBirthday,
   getAgeOfDeath,
+  getValidateText,
 } from '../../../utils'
 
 import { TPersonProfile } from '../../../types'
@@ -30,15 +31,18 @@ export const PersonalInformation = ({
         Gender: {getPersonGender(`${personProfile.gender}`)}
       </div>
       <div className={styles.text}>
-        Birthday: {personProfile.birthday}
-        {`${personProfile.deathday}` === 'null' ? ` (${age} years)` : null}
+        Birthday: {getValidateText(personProfile.birthday)}
+        {`${personProfile.deathday}` === 'null' &&
+        `${personProfile.birthday}` !== 'null'
+          ? ` (${age} years)`
+          : null}
       </div>
       <div className={styles.text}>
         {`${personProfile.deathday}` !== 'null'
           ? `Deathday: ${personProfile.deathday} (${ageOfDeath} years)`
           : null}
       </div>
-      <div>Place of birth: {personProfile.placeOfBirth}</div>
+      <div>Place of birth: {getValidateText(personProfile.placeOfBirth)}</div>
     </div>
   )
 }

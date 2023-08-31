@@ -1,35 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
-import { fetchMoviePersons } from '../../store/slices/movie-persons'
-import { fetchMovieCard } from '../../store/slices/movie-card'
-import { PersonsList } from '../../components/PersonsList'
 import { ScrollToTop } from '../../utils/components'
 import { PageTitleBlock } from '../../components/PageTitleBlock'
-import {
-  useAppDispatch,
-  useMovieCast,
-  useMovieCrew,
-  useMovieTitlePoster,
-} from '../../store'
-import styles from './CastAndCrewPage.module.css'
+import { TabsPersons } from '../../components/TabsPersons'
+import { useCastAndCrewPage } from './hooks'
+import { SkeletonCastAndCrewPage } from '../../components/Skeletons'
 
 export const CastAndCrewPage = () => {
   const { movieId } = useParams()
-  const dispatch = useAppDispatch()
 
-  const { title, poster, year } = useMovieTitlePoster(movieId)
-
-  const movieCast = useMovieCast(movieId)
-
-  const movieCrew = useMovieCrew(movieId)
-
-  useEffect(() => {
-    if (movieId) {
-      dispatch(fetchMoviePersons(movieId))
-      dispatch(fetchMovieCard(movieId))
-    }
-  }, [movieId, dispatch])
+  const { loading, title, poster, year } = useCastAndCrewPage(movieId)
 
   if (!movieId) {
     return null
@@ -43,28 +24,21 @@ export const CastAndCrewPage = () => {
           element={
             <>
               <ScrollToTop />
-              {title && poster && year && (
-                <PageTitleBlock
-                  title={title}
-                  poster={poster}
-                  year={year}
-                  movieId={movieId}
-                />
+              {loading ? (
+                <SkeletonCastAndCrewPage />
+              ) : (
+                <div>
+                  {title && poster && year && (
+                    <PageTitleBlock
+                      title={title}
+                      poster={poster}
+                      year={year}
+                      movieId={movieId}
+                    />
+                  )}
+                  <TabsPersons />
+                </div>
               )}
-              <div className={styles.section}>
-                <PersonsList
-                  movieId={movieId}
-                  title="Cast"
-                  items={movieCast}
-                  className={styles.container}
-                />
-                <PersonsList
-                  movieId={movieId}
-                  title="Crew"
-                  items={movieCrew}
-                  className={styles.container}
-                />
-              </div>
             </>
           }
         />

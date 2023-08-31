@@ -1,0 +1,28 @@
+.dropdown {
+  position: relative;
+}
+
+.movie {
+  position: absolute;
+  list-style-type: none;
+  background-color: #aaa7f2;
+  border-radius: 4px;
+}
+
+.movieItem {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  border-radius: 4px;
+}
+
+.movieItem:hover {
+  background-color: #ebedf2;
+}
+
+@media (min-width: 768px) {
+  .movieItem {
+    justify-content: end;
+    width: 210px;
+  }
+}

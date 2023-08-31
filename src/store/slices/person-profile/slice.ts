@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 import { createThunk } from '../../create-thunk'
-import { getPersonProfile } from '../../../api/person-profile'
+import { getPersonProfile } from '../../../api'
 import { TPersonProfileSlice } from './types'
 
 export const fetchPersonProfile = createThunk(

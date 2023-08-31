@@ -1,13 +1,43 @@
 .container {
-  margin: 20px;
+  margin: 10px;
   margin-top: 0;
-  width: 342px;
+  width: 90px;
 }
 
 .title {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .text {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 20px;
+    margin-top: 0;
+    width: 200px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .text {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 342px;
+  }
+
+  .title {
+    margin-bottom: 15px;
+  }
+
+  .text {
+    margin-bottom: 10px;
+  }
 }

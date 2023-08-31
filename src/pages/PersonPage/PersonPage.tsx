@@ -1,22 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
-import { fetchPersonProfile } from '../../store/slices/person-profile'
-
 import { PersonProfile } from '../../components/PersonProfile'
-import { useAppDispatch, usePersonProfile } from '../../store'
+import { usePersonPage } from './hooks'
+import { SkeletonPersonPage } from '../../components/Skeletons'
 
 export const PersonPage = () => {
   const { personId } = useParams()
-  const dispatch = useAppDispatch()
 
-  const person = usePersonProfile(personId)
-
-  useEffect(() => {
-    if (personId) {
-      dispatch(fetchPersonProfile(personId))
-    }
-  }, [personId, dispatch])
+  const { loading, person } = usePersonPage(personId)
 
   if (!personId) {
     return null
@@ -25,7 +17,19 @@ export const PersonPage = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<PersonProfile personProfile={person} />} />
+        <Route
+          path="/"
+          element={
+            <>
+              {' '}
+              {loading ? (
+                <SkeletonPersonPage personProfile={person} />
+              ) : (
+                <PersonProfile personProfile={person} />
+              )}
+            </>
+          }
+        />
       </Routes>
     </div>
   )

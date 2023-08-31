@@ -15,8 +15,8 @@ export const InformationTextList = ({ items }: TInformationTextListProps) => {
     return items.map((item, i) => {
       const isLast = i === items.length - 1
       return (
-        <React.Fragment key={item.name}>
-          {item.name}
+        <React.Fragment key={item.id}>
+          {`${item.name}` || `${item.english_name}`}
           {!isLast && <span>, </span>}
         </React.Fragment>
       )

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 
 import { MoviesShow } from '../MoviesShow'
 import { TMovie } from '../../types'
+
 import styles from './MoviesList.module.css'
 
 type TMoviesListProps = {

@@ -1,0 +1,139 @@
+.list {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  animation: list-loading 1.5s linear infinite alternate;
+}
+
+@keyframes list-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+.title {
+  height: 14px;
+  width: 90px;
+  margin: 5px 0 10px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  height: 10px;
+  width: 150px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.text {
+  height: 10px;
+  width: 120px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.runtime {
+  height: 10px;
+  width: 80px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+@media (min-width: 768px) {
+  .list {
+    margin: 0;
+    padding: 0;
+    animation: none;
+  }
+
+  .title {
+    height: 20px;
+    width: 130px;
+    margin: 0 0 10px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .name {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  @keyframes element-loading {
+    0% {
+      background-color: hsl(218, 37%, 81%);
+    }
+    100% {
+      background-color: hsl(219, 16%, 60%);
+    }
+  }
+
+  .text {
+    height: 30px;
+    width: 95%;
+    margin-bottom: 10px;
+    animation: text-loading 1.5s linear infinite alternate;
+  }
+
+  @keyframes text-loading {
+    0% {
+      background-color: hsl(218, 37%, 81%);
+    }
+    100% {
+      background-color: hsl(219, 16%, 60%);
+    }
+  }
+
+  .runtime {
+    height: 30px;
+    width: 90%;
+    margin-bottom: 10px;
+    animation: runtime-loading 1.5s linear infinite alternate;
+  }
+
+  @keyframes runtime-loading {
+    0% {
+      background-color: hsl(218, 37%, 81%);
+    }
+    100% {
+      background-color: hsl(219, 16%, 60%);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    height: 22px;
+    width: 150px;
+    margin: 5px 0 20px 0;
+  }
+
+  .name {
+    height: 30px;
+    margin-bottom: 15px;
+  }
+
+  .text {
+    height: 26px;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .runtime {
+    height: 18px;
+    margin-bottom: 15px;
+  }
+}

@@ -29,7 +29,7 @@ export const RecommendationsList = ({
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.title}>{title}</div>
       <div className={styles.container}>{renderRecommendations}</div>
     </div>

@@ -1,0 +1,13 @@
+.company {
+  height: 25px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+@media (min-width: 768px) {
+  .company {
+    margin: 0;
+    height: 100%;
+    overflow: none;
+  }
+}

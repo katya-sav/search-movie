@@ -2,7 +2,6 @@ import React from 'react'
 
 import { Rating } from '../../Rating'
 import { TMovieCard } from '../../../types'
-import { getValidateText } from '../../../utils'
 import styles from './CardRating.module.css'
 
 type TCardRatingProps = {
@@ -11,10 +10,6 @@ type TCardRatingProps = {
 
 export const CardRating = ({ movieCard }: TCardRatingProps) => (
   <div className={styles.rating}>
-    <Rating
-      title="Rating"
-      icon="star"
-      ratingText={getValidateText(movieCard.rating)}
-    />
+    <Rating title="Rating" icon="star" ratingText={movieCard.rating} />
   </div>
 )

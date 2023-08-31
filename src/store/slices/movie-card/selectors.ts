@@ -7,6 +7,9 @@ export const useMovieCard = (movieId: string | undefined) =>
     movieId ? state.movieCard.movieCards[movieId] : null,
   )
 
+export const useMovieCardLoading = () =>
+  useSelector((state: RootState) => state.movieCard.state === 'loading')
+
 export const useMovieTitlePoster = (movieId: string | undefined) => {
   const movie = useMovieCard(movieId)
 

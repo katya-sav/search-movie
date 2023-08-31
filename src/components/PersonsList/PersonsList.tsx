@@ -5,12 +5,13 @@ import cx from 'classnames'
 import { Person } from '../Person/Person'
 import { ButtonRight } from '../ButtonRight'
 import { TPerson } from '../../types'
+
 import styles from './PersonsList.module.css'
 
 type TPersonsListProps = {
   movieId: string
   items: TPerson[]
-  title: string
+  title?: string
   viewAll?: boolean
   className?: string
 }
@@ -47,12 +48,16 @@ export const PersonsList = ({
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.title}>{title}</div>
       <div className={cx(styles.container, className)}>
         {persons}
         {viewAll && (
-          <ButtonRight onClick={navigateToCast} title="View all cast" />
+          <ButtonRight
+            className={styles.button}
+            onClick={navigateToCast}
+            title="View all cast"
+          />
         )}
       </div>
     </div>

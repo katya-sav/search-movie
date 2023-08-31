@@ -1,0 +1,48 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin: 0 20px;
+}
+
+.card {
+  list-style-type: none;
+}
+
+.image {
+  height: 160px;
+  border-radius: 4px;
+  padding: 10px;
+  color: #55519c;
+  animation: image-loading 1.5s linear infinite alternate;
+}
+
+@keyframes image-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+@media (min-width: 768px) {
+  .list {
+    gap: 15px;
+  }
+
+  .image {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list {
+    gap: 20px;
+  }
+
+  .image {
+    height: 260px;
+  }
+}

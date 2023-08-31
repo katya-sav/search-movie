@@ -1,8 +1,20 @@
 .button {
   margin: 0 5px 5px 0;
   padding: 5px;
-  font-size: 16px;
+  font-size: 10px;
   border-radius: 4px;
   border: 2px solid #2a2b42;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button {
+    font-size: 16px;
+  }
 }

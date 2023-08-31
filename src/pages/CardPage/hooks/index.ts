@@ -1,0 +1,1 @@
+export { useCardPage } from './useCardPage'

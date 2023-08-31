@@ -1,0 +1,118 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  margin-top: 0;
+}
+
+.title {
+  height: 22px;
+  width: 80px;
+  margin: 15px 0 10px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.profession {
+  height: 10px;
+  width: 80px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.gender {
+  height: 10px;
+  width: 60px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.date {
+  height: 20px;
+  width: 85px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.place {
+  height: 25px;
+  width: 90px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin: 10px 20px;
+  }
+
+  .title {
+    height: 24px;
+    width: 180px;
+    margin: 10px 0 10px 0;
+  }
+
+  .profession {
+    height: 16px;
+    width: 130px;
+    margin-bottom: 10px;
+  }
+
+  .gender {
+    height: 16px;
+    width: 90px;
+    margin-bottom: 10px;
+  }
+
+  .date {
+    height: 26px;
+    width: 190px;
+    margin-bottom: 10px;
+  }
+
+  .place {
+    height: 30px;
+    width: 190px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    margin: 0 20px 20px 20px;
+  }
+
+  .title {
+    height: 26px;
+    width: 200px;
+    margin: 20px 0;
+  }
+
+  .profession {
+    height: 20px;
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .gender {
+    height: 20px;
+    width: 90px;
+    margin-bottom: 15px;
+  }
+
+  .date {
+    height: 20px;
+    width: 200px;
+    margin-bottom: 15px;
+  }
+
+  .place {
+    height: 30px;
+    width: 290px;
+    margin-bottom: 15px;
+  }
+}

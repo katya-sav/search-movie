@@ -17,6 +17,7 @@ export const ImageModalContent = () => {
       <SafeImage
         src={`https://api.moviesdb.ru/t/p/original${meta.imagePath}`}
         className={styles.image}
+        errorClassName={styles.errorImage}
       />
     </div>
   )

@@ -1,5 +1,11 @@
 .list {
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px 0 20px 20px;
+  margin: 5px 20px 0;
+}
+
+@media (min-width: 768px) {
+  .list {
+    margin-top: 0;
+  }
 }

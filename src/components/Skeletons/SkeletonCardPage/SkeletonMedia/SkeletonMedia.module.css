@@ -1,0 +1,144 @@
+.wrapper {
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+}
+
+.title {
+  height: 16px;
+  width: 15%;
+  margin-right: 10px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+.mediaNav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 81%;
+}
+
+.button {
+  height: 14px;
+  width: 60px;
+  margin-right: 5px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+.buttonBig {
+  height: 18px;
+  width: 80px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+.list {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  overflow: auto;
+  margin: 10px;
+}
+
+.card {
+  list-style-type: none;
+}
+
+.image {
+  width: 100px;
+  height: 160px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #c3cce2;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+@keyframes element-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 0;
+  }
+
+  .media {
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    height: 20px;
+    margin-top: 20px;
+  }
+
+  .button {
+    height: 20px;
+    width: 80px;
+    margin: 20px 0 0 20px;
+  }
+
+  .buttonBig {
+    height: 28px;
+    width: 100px;
+    margin: 20px 0 0 20px;
+  }
+
+  .list {
+    gap: 15px;
+    margin: 0;
+  }
+
+  .image {
+    width: 120px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .media {
+    justify-content: space-between;
+    overflow: none;
+    margin: 0 10px 20px 0;
+  }
+
+  .title {
+    height: 22px;
+    width: 100px;
+    margin-top: 20px;
+  }
+
+  .button {
+    height: 22px;
+    width: 100px;
+  }
+
+  .buttonBig {
+    height: 28px;
+    width: 140px;
+  }
+
+  .list {
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .image {
+    width: 170px;
+    height: 260px;
+  }
+}

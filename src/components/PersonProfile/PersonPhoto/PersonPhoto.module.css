@@ -1,21 +1,57 @@
 .image {
-  width: 342px;
-  margin: 20px;
+  width: 90px;
+  margin: 10px;
   border-radius: 5px;
 }
 
 .imageError {
-  width: 342px;
-  margin: 20px;
+  width: 90px;
+  margin: 10px;
   border-radius: 5px;
 }
 
 .button {
-  margin-bottom: 20px;
-  margin-left: 20px;
-  font-size: 18px;
+  width: 80px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .button:hover {
   background-color: #ebedf2;
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 250px;
+    margin: 15px;
+  }
+
+  .imageError {
+    width: 250px;
+    margin: 15px;
+  }
+
+  .button {
+    width: 250px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    width: 342px;
+    margin: 20px;
+  }
+
+  .imageError {
+    width: 342px;
+    margin: 20px;
+  }
+
+  .button {
+    width: 342px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
 }

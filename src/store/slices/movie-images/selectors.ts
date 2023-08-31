@@ -12,3 +12,6 @@ export const useMoviePosters = (movieId: string | undefined) =>
   useSelector((state: RootState) =>
     getListSafe(state.movieImages.posters, movieId),
   )
+
+export const useMovieImagesLoading = () =>
+  useSelector((state: RootState) => state.movieImages.state === 'loading')

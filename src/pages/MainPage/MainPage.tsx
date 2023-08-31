@@ -1,12 +1,12 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import { Title } from '../../components/Title'
+import { Main } from '../../components/Main'
 
 export const MainPage = () => (
   <div>
     <Routes>
-      <Route path="/" element={<Title />} />
+      <Route path="/" element={<Main />} />
     </Routes>
   </div>
 )

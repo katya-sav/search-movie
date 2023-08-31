@@ -1,11 +1,44 @@
-.image {
-  height: 900px;
-  min-width: 600px;
-  max-width: 1550px;
-}
-
 .modal {
   position: relative;
   margin-bottom: 20px;
   top: 55px;
+}
+
+.image {
+  height: 180px;
+  min-width: 120px;
+  max-width: 300px;
+  border-radius: 4px;
+}
+
+.errorImage {
+  height: 180px;
+  width: 120px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .image {
+    height: 440px;
+    min-width: 290px;
+    max-width: 740px;
+  }
+
+  .errorImage {
+    height: 440px;
+    width: 290px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    height: 600px;
+    min-width: 400px;
+    max-width: 1100px;
+  }
+
+  .errorImage {
+    height: 600px;
+    width: 400px;
+  }
 }

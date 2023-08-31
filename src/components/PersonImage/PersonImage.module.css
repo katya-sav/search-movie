@@ -1,9 +1,35 @@
 .image {
-  width: 300px;
-  height: 450px;
+  width: 90px;
+  height: 135px;
+  border-radius: 4px;
 }
 
 .imageError {
-  width: 300px;
-  height: 450px;
+  width: 90px;
+  height: 135px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 250px;
+    height: 380px;
+  }
+
+  .imageError {
+    width: 250px;
+    height: 380px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    width: 300px;
+    height: 450px;
+  }
+
+  .imageError {
+    width: 300px;
+    height: 450px;
+  }
 }

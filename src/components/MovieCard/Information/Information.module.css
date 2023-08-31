@@ -1,9 +1,15 @@
 .list {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .title {
   margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+  .list {
+    margin-bottom: 10px;
+  }
 }

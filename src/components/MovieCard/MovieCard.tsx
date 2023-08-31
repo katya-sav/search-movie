@@ -4,7 +4,9 @@ import { CardPoster } from './CardPoster '
 import { CardHeader } from './CardHeader'
 import { CardMain } from './CardMain'
 import { CardRating } from './CardRating'
+
 import { TMovieCard } from '../../types'
+
 import styles from './MovieCard.module.css'
 
 type TMovieCardProps = {
@@ -23,7 +25,9 @@ export const MovieCard = ({ movieCard }: TMovieCardProps) => {
         <CardHeader movieCard={movieCard} />
         <CardMain movieCard={movieCard} />
       </div>
-      <CardRating movieCard={movieCard} />
+      <div className={styles.rating}>
+        <CardRating movieCard={movieCard} />
+      </div>
     </div>
   )
 }

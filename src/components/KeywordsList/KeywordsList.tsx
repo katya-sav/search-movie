@@ -12,7 +12,7 @@ type TKeywordsListProps = {
 export const KeywordsList = ({ title, keywords }: TKeywordsListProps) => {
   const renderKeywords = useMemo(
     () =>
-      keywords?.map(keyword => <Keyword key={keyword.id} keyword={keyword} />),
+      keywords.map(keyword => <Keyword key={keyword.id} keyword={keyword} />),
     [keywords],
   )
 

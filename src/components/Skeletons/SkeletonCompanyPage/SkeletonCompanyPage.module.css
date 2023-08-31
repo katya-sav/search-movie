@@ -1,0 +1,163 @@
+.wrapper {
+  margin: 0 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 185px;
+  margin: 40px 0;
+  padding: 10px 0;
+  border-radius: 4px;
+  animation: card-loading 1.5s linear infinite alternate;
+}
+
+@keyframes card-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+.image {
+  width: 80px;
+  height: 130px;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #c3cce2;
+  animation: icon-loading 1.5s linear infinite alternate;
+}
+
+@keyframes icon-loading {
+  0% {
+    color: hsl(218, 37%, 81%);
+  }
+  100% {
+    color: hsl(219, 16%, 60%);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 0 10px;
+}
+
+.title {
+  width: 80px;
+  height: 16px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.text {
+  width: 60px;
+  height: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.headquarters {
+  width: 150px;
+  height: 15px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.homepage {
+  width: 50px;
+  height: 20px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 0 20px;
+  }
+
+  .card {
+    height: 325px;
+  }
+
+  .image {
+    width: 160px;
+    height: 250px;
+  }
+
+  .section {
+    margin: 0 10px 0 20px;
+  }
+
+  .title {
+    width: 140px;
+    height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .text {
+    width: 110px;
+    height: 16px;
+    margin-bottom: 10px;
+  }
+
+  .headquarters {
+    width: 250px;
+    height: 16px;
+    margin-bottom: 10px;
+  }
+
+  .homepage {
+    width: 100px;
+    height: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    margin: 0 20px;
+  }
+
+  .card {
+    height: 355px;
+  }
+
+  .image {
+    width: 180px;
+    height: 280px;
+  }
+
+  .section {
+    margin: 0 10px 0 40px;
+  }
+
+  .title {
+    width: 160px;
+    height: 30px;
+  }
+
+  .text {
+    width: 130px;
+    height: 18px;
+  }
+
+  .headquarters {
+    width: 300px;
+    height: 18px;
+  }
+
+  .homepage {
+    width: 110px;
+    height: 28px;
+  }
+}

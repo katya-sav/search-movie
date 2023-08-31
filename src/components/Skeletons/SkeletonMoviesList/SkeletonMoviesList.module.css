@@ -1,0 +1,115 @@
+.list {
+  margin: 15px 10px 0 10px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  height: 225px;
+  width: 100%;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+.image {
+  height: 225px;
+  width: 130px;
+  padding: 0 10px;
+  border-radius: 4px;
+  color: #c3cce2;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+@keyframes element-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  height: 14px;
+  width: 100px;
+  margin: 5px 0;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.year {
+  height: 12px;
+  width: 50px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.subtitle {
+  height: 12px;
+  width: 70px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.description {
+  height: 90px;
+  width: 95%;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+@media (min-width: 768px) {
+  .list {
+    margin: 20px 20px 0 20px;
+    gap: 20px;
+  }
+
+  .card {
+    height: 513px;
+  }
+
+  .image {
+    height: 493px;
+    width: 322px;
+  }
+
+  .section {
+    justify-content: center;
+    margin-left: 20px;
+  }
+
+  .title {
+    height: 32px;
+    width: 180px;
+    margin-bottom: 15px;
+  }
+
+  .year {
+    height: 18px;
+    width: 70px;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    height: 18px;
+    width: 90px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    height: 80px;
+  }
+}

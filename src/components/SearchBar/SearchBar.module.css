@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 40px;
+  width: 100px;
+  height: 30px;
   padding: 10px;
-  font-size: 30px;
+  margin-right: 10px;
+  font-size: 14px;
   color: #6f6bf2;
   background-color: #2a2b42;
   border: 2px solid #aaa7f2;
@@ -16,8 +18,18 @@
 .input:hover {
   background-color: #ebedf2;
 }
+
 .input:active {
   background-color: #ebedf2;
   border: 2px solid #2a2b42;
   border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .input {
+    height: 40px;
+    font-size: 30px;
+    width: 100%;
+    margin: 0;
+  }
 }

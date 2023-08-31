@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px 10px 5px;
+}
+
+.title {
+  height: 14px;
+  width: 70px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.biography {
+  height: 200px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin: 0 20px 10px 20px;
+  }
+
+  .title {
+    height: 20px;
+    width: 130px;
+    margin-bottom: 15px;
+  }
+
+  .biography {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    margin: 0 20px 10px 40px;
+  }
+
+  .title {
+    height: 26px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,1 +1,1 @@
-export * from "./InformationLinkList";
+export * from './InformationLinkList'

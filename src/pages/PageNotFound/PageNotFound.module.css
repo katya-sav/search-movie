@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #ebedf2;
+}
+
+.image {
+  width: 70%;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-bottom: 15px;
+}
+
+.button {
+  color: #2a2b42;
+  background-color: #aaa7f2;
+}
+
+@media (min-width: 768px) {
+  .card {
+    font-size: 18px;
+  }
+
+  .image {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    font-size: 20px;
+  }
+
+  .image {
+    width: 50%;
+  }
+}

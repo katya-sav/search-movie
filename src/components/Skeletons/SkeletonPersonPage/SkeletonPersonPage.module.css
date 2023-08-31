@@ -1,0 +1,47 @@
+.wrapper {
+  margin: 15px 10px 0;
+}
+
+.card {
+  display: flex;
+  height: 750px;
+  width: 100%;
+  border-radius: 4px;
+  animation: card-loading 1.5s linear infinite alternate;
+}
+
+@keyframes card-loading {
+  0% {
+    background-color: hsl(218, 37%, 81%);
+  }
+  100% {
+    background-color: hsl(219, 16%, 60%);
+  }
+}
+
+.section {
+  width: 100%;
+  overflow-y: scroll;
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 20px;
+    margin-bottom: 0;
+  }
+
+  .card {
+    height: 1000px;
+  }
+
+  .section {
+    margin: 15px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    margin: 20px 0;
+  }
+}
