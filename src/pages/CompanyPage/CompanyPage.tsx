@@ -2,8 +2,7 @@ import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
 import { MovieCompany } from '../../components/MovieCompany'
-import { ScrollToTop } from '../../utils/components'
-
+import { useScrollToTop } from '../../utils'
 import { SkeletonCompanyPage } from '../../components/Skeletons'
 import { useCompanyPage } from './hooks'
 
@@ -11,6 +10,8 @@ export const CompanyPage = () => {
   const { companyId } = useParams()
 
   const { loading, movieCompany } = useCompanyPage(companyId)
+
+  useScrollToTop()
 
   if (!companyId) {
     return null
@@ -22,14 +23,11 @@ export const CompanyPage = () => {
         <Route
           path="/"
           element={
-            <>
-              <ScrollToTop />
-              {loading ? (
-                <SkeletonCompanyPage movieCompany={movieCompany} />
-              ) : (
-                <MovieCompany movieCompany={movieCompany} />
-              )}
-            </>
+            loading ? (
+              <SkeletonCompanyPage movieCompany={movieCompany} />
+            ) : (
+              <MovieCompany movieCompany={movieCompany} />
+            )
           }
         />
       </Routes>

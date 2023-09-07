@@ -19,7 +19,7 @@ export const PersonPhoto = ({ personProfile }: TPersonPhotoProps) => {
   }, [navigate, personProfile.id])
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <SafeImage
         src={`https://api.moviesdb.ru/t/p/w342${personProfile.image}`}
         alt={personProfile.name}

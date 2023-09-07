@@ -1,0 +1,43 @@
+.card {
+  margin: 10px;
+  color: #ebedf2;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.description {
+  padding: 10px 5px;
+  color: #aaa7f2;
+  background-color: #2a2b42;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin: 20px 15px 10px;
+    font-size: 16px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .description {
+    padding: 16px 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}

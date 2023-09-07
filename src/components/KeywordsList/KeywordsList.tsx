@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 
 import { Keyword } from '../Keyword/Keyword'
 import { TKeyword } from '../../types'
@@ -10,12 +10,6 @@ type TKeywordsListProps = {
 }
 
 export const KeywordsList = ({ title, keywords }: TKeywordsListProps) => {
-  const renderKeywords = useMemo(
-    () =>
-      keywords.map(keyword => <Keyword key={keyword.id} keyword={keyword} />),
-    [keywords],
-  )
-
   if (!keywords.length) {
     return null
   }
@@ -23,7 +17,11 @@ export const KeywordsList = ({ title, keywords }: TKeywordsListProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>{title}</div>
-      <div className={styles.list}>{renderKeywords}</div>
+      <div className={styles.list}>
+        {keywords.map(keyword => (
+          <Keyword key={keyword.id} keyword={keyword} />
+        ))}
+      </div>
     </div>
   )
 }

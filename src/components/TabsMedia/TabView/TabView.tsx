@@ -1,11 +1,13 @@
 import React, { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { TTabName } from '../types'
 import { TabViewAll } from '../TabViewAll'
+import styles from './TabView.module.css'
 
 type TTabViewProps = {
   movieId: string
-  activeTab: number
+  activeTab: TTabName
 }
 
 export const TabView = ({ movieId, activeTab }: TTabViewProps) => {
@@ -24,22 +26,22 @@ export const TabView = ({ movieId, activeTab }: TTabViewProps) => {
   }, [movieId, navigate])
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <TabViewAll
-        id={1}
-        title="View all posters"
+        title="Posters"
+        text="View all posters"
         activeTab={activeTab}
         onClick={handleNavigatePosters}
       />
       <TabViewAll
-        id={2}
-        title="View all backdrops"
+        title="Backdrops"
+        text="View all backdrops"
         activeTab={activeTab}
         onClick={handleNavigateBackdrops}
       />
       <TabViewAll
-        id={3}
-        title="View all videos"
+        title="Videos"
+        text="View all videos"
         activeTab={activeTab}
         onClick={handleNavigateVideos}
       />

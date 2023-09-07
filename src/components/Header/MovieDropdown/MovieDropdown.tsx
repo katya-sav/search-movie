@@ -41,16 +41,12 @@ export const MovieDropdown = () => {
   )
 
   return (
-    <div onMouseEnter={handleOpen} onMouseLeave={handleClose}>
-      <Dropdown
-        open={open}
-        trigger={
-          <button className={styles.button} type="button">
-            Movies
-          </button>
-        }
-        menu={dropdownMenu}
-      />
-    </div>
+    <Dropdown
+      open={open}
+      trigger={<div className={styles.button}>Movies</div>}
+      menu={dropdownMenu}
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleClose}
+    />
   )
 }

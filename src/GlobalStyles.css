@@ -11,17 +11,11 @@ body {
   background-color: #55519c;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 75px;
+  padding-bottom: 70px;
 }
 
 @media (min-width: 768px) {
   body {
-    padding-bottom: 90px;
+    padding-bottom: 115px;
   }
 }
-/* 
-@media (min-width: 1200px) {
-  body {
-    padding-bottom: 90px;
-  }
-} */

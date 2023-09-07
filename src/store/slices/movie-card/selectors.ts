@@ -10,12 +10,10 @@ export const useMovieCard = (movieId: string | undefined) =>
 export const useMovieCardLoading = () =>
   useSelector((state: RootState) => state.movieCard.state === 'loading')
 
-export const useMovieTitlePoster = (movieId: string | undefined) => {
+export const useMovieTitle = (movieId: string | undefined) => {
   const movie = useMovieCard(movieId)
 
   return {
     title: movie?.title,
-    poster: movie?.poster,
-    year: movie?.year,
   }
 }

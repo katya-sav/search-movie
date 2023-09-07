@@ -1,31 +1,29 @@
 import React, { useCallback } from 'react'
+import cx from 'classnames'
 
+import { TTabName } from '../types'
 import styles from './TabNavItem.module.css'
 
 type TTabNavItemProps = {
-  id: number
-  title: string
-  activeTab: number
-  setActiveTab: any
+  title: TTabName
+  activeTab: TTabName
+  setActiveTab: (name: TTabName) => void
 }
 
 export const TabNavItem = ({
-  id,
   title,
   activeTab,
   setActiveTab,
 }: TTabNavItemProps) => {
   const handleTab = useCallback(() => {
-    setActiveTab(id)
-  }, [id, setActiveTab])
+    setActiveTab(title)
+  }, [title, setActiveTab])
 
   return (
     <button
       type="button"
-      className={
-        activeTab === id ? `${styles.buttonActive}` : `${styles.button}`
-      }
-      onClick={() => handleTab()}
+      className={cx(styles.button, activeTab === title && styles.buttonActive)}
+      onClick={handleTab}
     >
       {title}
     </button>

@@ -83,7 +83,6 @@ export type TIconType =
   | 'image'
   | 'portrait'
   | 'video'
-  | 'github'
 
 export type TFetchingState = 'init' | 'loading' | 'success' | 'failure'
 
@@ -92,9 +91,9 @@ export type TPersonProfile = {
   name: string
   image: string
   gender: string
-  birthday: string
+  birthday: string | null
   placeOfBirth: string
-  deathday: string
+  deathday: string | null
   biography: string
   profession: string
 }
@@ -105,3 +104,9 @@ export type TPersonMovie = {
   year: string
   prof: string
 }
+
+export type TClassifiedMovie =
+  | 'popular'
+  | 'top_rated'
+  | 'upcoming'
+  | 'now_playing'

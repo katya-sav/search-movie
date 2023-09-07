@@ -1,13 +1,12 @@
 .card {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  margin-top: 0;
+  margin: 0 10px 5px;
 }
 
 .title {
-  height: 22px;
-  width: 80px;
+  height: 16px;
+  width: 130px;
   margin: 15px 0 10px 0;
   border-radius: 4px;
   background-color: #c3cce2;
@@ -15,7 +14,7 @@
 
 .profession {
   height: 10px;
-  width: 80px;
+  width: 100px;
   margin-bottom: 5px;
   border-radius: 4px;
   background-color: #c3cce2;
@@ -23,23 +22,23 @@
 
 .gender {
   height: 10px;
-  width: 60px;
+  width: 80px;
   margin-bottom: 5px;
   border-radius: 4px;
   background-color: #c3cce2;
 }
 
 .date {
-  height: 20px;
-  width: 85px;
+  height: 10px;
+  width: 115px;
   margin-bottom: 5px;
   border-radius: 4px;
   background-color: #c3cce2;
 }
 
 .place {
-  height: 25px;
-  width: 90px;
+  height: 10px;
+  width: 180px;
   margin-bottom: 5px;
   border-radius: 4px;
   background-color: #c3cce2;

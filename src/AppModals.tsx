@@ -1,15 +1,22 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback, useMemo, useEffect } from 'react'
 
 import { useAppDispatch, useOpenedModal } from './store'
 import { Modal } from './components/Modal'
 import { ImageModalContent } from './components/ImageModalContent'
 import { close } from './store/slices/modal'
 import { IMAGE_MODAL_ID } from './constants/modals'
-import { ScrollToTop } from './utils/components'
 
 export const AppModals = () => {
   const dispatch = useAppDispatch()
   const modal = useOpenedModal()
+
+  useEffect(() => {
+    if (modal) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+    }
+  }, [modal])
 
   const closeModal = useCallback(() => dispatch(close()), [dispatch])
 
@@ -29,7 +36,6 @@ export const AppModals = () => {
 
   return (
     <div>
-      <ScrollToTop />
       <Modal content={content} onCloseClick={closeModal} />
     </div>
   )

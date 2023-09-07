@@ -15,17 +15,6 @@ export const Keyword = ({ keyword }: TKeywordProps) => {
     navigate(`/keyword/${keyword.id}`, { replace: false })
   }, [navigate, keyword.id])
 
-  // const handleKeyDown = useCallback(
-  //   (e: React.KeyboardEvent<HTMLDivElement>) => {
-  //     if (e.key === 'Enter') {
-  //       e.preventDefault()
-
-  //       handleNavigate()
-  //     }
-  //   },
-  //   [handleNavigate],
-  // )
-
   return (
     <button
       className={styles.button}

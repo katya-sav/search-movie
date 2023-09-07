@@ -1,10 +1,15 @@
 .button {
   margin: 0 5px 5px 0;
   padding: 5px;
-  font-size: 10px;
+  font-size: 12px;
   border-radius: 4px;
   border: 2px solid #2a2b42;
   cursor: pointer;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: #ddd;
+  }
 }
 
 @media (min-width: 768px) {

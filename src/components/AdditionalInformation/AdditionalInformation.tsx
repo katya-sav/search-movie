@@ -16,19 +16,21 @@ export const AdditionalInformation = ({
     return null
   }
 
-  const budget = getCurrencyFromValue(`${movieCard.budget}`)
-  const revenue = getCurrencyFromValue(`${movieCard.revenue}`)
+  const budget = getCurrencyFromValue(movieCard.budget)
+  const revenue = getCurrencyFromValue(movieCard.revenue)
   const runtime = `${movieCard.runtime} min`
 
   return (
     <div className={styles.stats}>
-      <h3 className={styles.title}>Additionally</h3>
-      <div className={styles.data}>
-        Original title: {getValidateText(movieCard.originalTitle)}
+      <h3 className={styles.title}>Additionall Info</h3>
+      <div className={styles.section}>
+        <div className={styles.data}>
+          Original title: {getValidateText(movieCard.originalTitle)}
+        </div>
+        <div className={styles.data}>Budget: {getValidateText(budget)}</div>
+        <div className={styles.data}>Revenue: {getValidateText(revenue)}</div>
+        <div>Runtime: {getValidateText(runtime)}</div>
       </div>
-      <div className={styles.data}>Budget: {getValidateText(budget)}</div>
-      <div className={styles.data}>Revenue: {getValidateText(revenue)}</div>
-      <div>Runtime: {getValidateText(runtime)}</div>
     </div>
   )
 }

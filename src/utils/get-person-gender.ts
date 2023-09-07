@@ -1,15 +1,15 @@
-export const getPersonGender = (gender: string) => {
+export const getPersonGender = (gender: number) => {
   switch (gender) {
-    case '0':
+    case 0:
       return 'Not set'
 
-    case '1':
+    case 1:
       return 'Female'
 
-    case '2':
+    case 2:
       return 'Male'
 
-    case '3':
+    case 3:
       return 'Non-binary'
 
     default:

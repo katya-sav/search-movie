@@ -18,6 +18,7 @@ export const getPersonMovies = async (
 ): Promise<TGetPersonMoviesResponse> => {
   try {
     const baseUrl = 'https://api.moviesdb.ru'
+
     const personMoviesRes = await fetch(
       `${baseUrl}/3/person/${personId}/movie_credits`,
       {

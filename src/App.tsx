@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import { Header } from './components/Header'
 import { MainPage } from './pages/MainPage'
 import { SearchPage } from './pages/SearchPage'
 import { ClassifiedMoviesPage } from './pages/ClassifiedMoviesPage'
@@ -16,13 +15,14 @@ import { PersonPage } from './pages/PersonPage'
 import { PersonImagesPage } from './pages/PersonImagesPage'
 import { CompanyPage } from './pages/CompanyPage'
 import { PageNotFound } from './pages/PageNotFound'
+import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { AppModals } from './AppModals'
 
 import './GlobalStyles.css'
 
 export const App = () => (
-  <div className="GlobalStyles">
+  <>
     <Header />
     <Routes>
       <Route path="/" element={<MainPage />} />
@@ -42,5 +42,5 @@ export const App = () => (
     </Routes>
     <Footer />
     <AppModals />
-  </div>
+  </>
 )

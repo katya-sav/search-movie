@@ -1,9 +1,12 @@
-import { useSelector } from 'react-redux'
+import { createSelector } from '@reduxjs/toolkit'
 
 import { RootState } from '../../store'
 import { getListSafe } from '../../../utils'
 
-export const useMovies = (searchQuery: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.movies.movies, searchQuery),
-  )
+export const selectMovies = createSelector(
+  [
+    (state: RootState) => state.movies.movies,
+    (_: RootState, searchQuery?: string) => searchQuery,
+  ],
+  (movies, searchQuery) => getListSafe(movies, searchQuery),
+)

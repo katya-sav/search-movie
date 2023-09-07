@@ -20,6 +20,7 @@ export const getPersonProfile = async (
 ): Promise<TGetPersonProfileResponse> => {
   try {
     const baseUrl = 'https://api.moviesdb.ru'
+
     const personProfileRes = await fetch(
       `${baseUrl}/3/person/${personId}?language=en-US`,
       {

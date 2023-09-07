@@ -21,7 +21,7 @@ export const getMoviesListByKeyword = async (
   try {
     const baseUrl = 'https://api.moviesdb.ru'
     const moviesListByKeywordRes = await fetch(
-      `${baseUrl}/3/discover/movie?query&with_keyword=${keyId}`,
+      `${baseUrl}/3/discover/movie?with_keywords=${keyId}`,
       {
         method: 'GET',
         headers: { accept: 'application/json' },

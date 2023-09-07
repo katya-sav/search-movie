@@ -1,32 +1,31 @@
 .wrapper {
   margin: 10px 10px 0 0;
-  padding: 10px;
-  border-radius: 4px;
-  animation: wrapper-loading 1.5s linear infinite alternate;
 }
 
-@keyframes wrapper-loading {
+.title {
+  height: 14px;
+  width: 70px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  gap: 10px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+@keyframes element-loading {
   0% {
     background-color: hsl(218, 37%, 81%);
   }
   100% {
     background-color: hsl(219, 16%, 60%);
   }
-}
-
-.title {
-  height: 14px;
-  width: 70px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-color: #c3cce2;
-}
-
-.list {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 .keyword {
@@ -55,8 +54,6 @@
 @media (min-width: 768px) {
   .wrapper {
     margin: 0;
-    padding: 0;
-    animation: none;
   }
 
   .title {
@@ -64,6 +61,11 @@
     width: 70px;
     margin: 10px 0 15px 0;
     animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .list {
+    padding: 0;
+    animation: none;
   }
 
   .keyword {

@@ -1,11 +1,24 @@
 .list {
   margin-right: 10px;
-  padding: 10px;
-  border-radius: 4px;
-  animation: list-loading 1.5s linear infinite alternate;
 }
 
-@keyframes list-loading {
+.title {
+  height: 14px;
+  width: 90px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  border-radius: 4px;
+  animation: element-loading 1.5s linear infinite alternate;
+}
+
+@keyframes element-loading {
   0% {
     background-color: hsl(218, 37%, 81%);
   }
@@ -14,97 +27,62 @@
   }
 }
 
-.title {
-  height: 14px;
-  width: 90px;
-  margin: 5px 0 10px;
-  border-radius: 4px;
-  background-color: #c3cce2;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
 .name {
-  height: 10px;
-  width: 150px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  background-color: #c3cce2;
+  display: none;
 }
 
 .text {
-  height: 10px;
-  width: 120px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  background-color: #c3cce2;
+  display: none;
 }
 
 .runtime {
-  height: 10px;
-  width: 80px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  background-color: #c3cce2;
+  display: none;
 }
 
 @media (min-width: 768px) {
   .list {
     margin: 0;
-    padding: 0;
-    animation: none;
   }
 
   .title {
     height: 20px;
     width: 130px;
     margin: 0 0 10px;
-    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .card {
+    height: 100%;
+    animation: none;
   }
 
   .name {
+    display: block;
     height: 40px;
     width: 100%;
     margin-bottom: 10px;
+    border-radius: 4px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .text {
+    display: block;
+    height: 30px;
+    width: 95%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    animation: element-loading 1.5s linear infinite alternate;
+  }
+
+  .runtime {
+    display: block;
+    height: 30px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 4px;
     animation: element-loading 1.5s linear infinite alternate;
   }
 
   @keyframes element-loading {
-    0% {
-      background-color: hsl(218, 37%, 81%);
-    }
-    100% {
-      background-color: hsl(219, 16%, 60%);
-    }
-  }
-
-  .text {
-    height: 30px;
-    width: 95%;
-    margin-bottom: 10px;
-    animation: text-loading 1.5s linear infinite alternate;
-  }
-
-  @keyframes text-loading {
-    0% {
-      background-color: hsl(218, 37%, 81%);
-    }
-    100% {
-      background-color: hsl(219, 16%, 60%);
-    }
-  }
-
-  .runtime {
-    height: 30px;
-    width: 90%;
-    margin-bottom: 10px;
-    animation: runtime-loading 1.5s linear infinite alternate;
-  }
-
-  @keyframes runtime-loading {
     0% {
       background-color: hsl(218, 37%, 81%);
     }

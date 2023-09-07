@@ -4,7 +4,7 @@ import { fetchMovieVideos } from '../../../store/slices/movie-videos'
 import { fetchMovieCard } from '../../../store/slices/movie-card'
 import {
   useAppDispatch,
-  useMovieTitlePoster,
+  useMovieTitle,
   useMovieVideos,
   useMovieVideosLoading,
 } from '../../../store'
@@ -12,7 +12,7 @@ import {
 export const useVideosPage = (movieId: string | undefined) => {
   const dispatch = useAppDispatch()
 
-  const { title, poster, year } = useMovieTitlePoster(movieId)
+  const { title } = useMovieTitle(movieId)
 
   const videos = useMovieVideos(movieId)
 
@@ -25,5 +25,5 @@ export const useVideosPage = (movieId: string | undefined) => {
     }
   }, [movieId, dispatch])
 
-  return { loading, videos, title, poster, year }
+  return { loading, videos, title }
 }

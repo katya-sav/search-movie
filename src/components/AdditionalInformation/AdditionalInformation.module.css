@@ -1,15 +1,20 @@
 .stats {
-  font-size: 10px;
+  font-size: 12px;
   margin: 5px 0 0 5px;
-  padding: 10px;
-  color: #aaa7f2;
-  background-color: #2a2b42;
+  color: #ebedf2;
   border-radius: 4px;
 }
 
 .title {
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.section {
+  padding: 5px;
+  color: #aaa7f2;
+  background-color: #2a2b42;
+  border-radius: 4px;
 }
 
 .data {
@@ -21,7 +26,6 @@
     margin: 0;
     margin-bottom: 20px;
     padding: 0;
-
     color: #ebedf2;
     background-color: transparent;
     font-size: 16px;
@@ -30,6 +34,12 @@
   .title {
     margin-bottom: 10px;
     font-size: 20px;
+  }
+
+  .section {
+    color: inherit;
+    background-color: inherit;
+    padding: 0;
   }
 
   .data {

@@ -9,12 +9,12 @@
 }
 
 .name {
-  font-size: 20px;
   margin-right: 10px;
+  border: none;
+  font-size: 20px;
   font-weight: bold;
   color: #aaa7f2;
   background-color: #2a2b42;
-  border: none;
   cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
   }
 
   .name {
-    font-size: 30px;
     margin: 0;
+    font-size: 30px;
   }
 }

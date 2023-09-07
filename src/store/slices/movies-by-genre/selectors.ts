@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux'
+import { createSelector } from '@reduxjs/toolkit'
 
 import { RootState } from '../../store'
 import { getListSafe } from '../../../utils'
 
-export const useMoviesByGenre = (genreId: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.moviesByGenre.movies, genreId),
-  )
-
-export const useMoviesByGenreLoading = () =>
-  useSelector((state: RootState) => state.moviesByGenre.state === 'loading')
+export const selectMoviesByGenre = createSelector(
+  [
+    (state: RootState) => state.moviesByGenre.movies,
+    (_: RootState, genreId?: string) => genreId,
+  ],
+  (movies, genreId) => getListSafe(movies, genreId),
+)

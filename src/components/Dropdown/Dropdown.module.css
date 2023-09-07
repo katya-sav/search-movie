@@ -4,9 +4,9 @@
 
 .movie {
   position: absolute;
+  border-radius: 4px;
   list-style-type: none;
   background-color: #aaa7f2;
-  border-radius: 4px;
 }
 
 .movieItem {
@@ -14,6 +14,7 @@
   justify-content: center;
   width: 80px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .movieItem:hover {

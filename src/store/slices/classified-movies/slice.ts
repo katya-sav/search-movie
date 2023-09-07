@@ -3,10 +3,11 @@ import { createSlice } from '@reduxjs/toolkit'
 import { createThunk } from '../../create-thunk'
 import { getClassifiedMovies } from '../../../api'
 import { TMoviesSliceState } from '../types'
+import { TClassifiedMovie } from '../../../types'
 
 export const fetchClassifiedMovies = createThunk(
   'movies/searchMovies',
-  async (pathType: any) => {
+  async (pathType: TClassifiedMovie) => {
     const response = await getClassifiedMovies(pathType)
 
     if (response.type === 'success') {

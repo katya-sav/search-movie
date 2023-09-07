@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-// import { AiFillGithub } from 'react-icons/ai'
+import { FaGithub, FaTelegram } from 'react-icons/fa'
 
 import styles from './Footer.module.css'
 
@@ -16,27 +16,43 @@ export const Footer = () => {
       >
         Search Movie
       </button>
-      <div>
-        <p> © 2018 Ekaterina Antonova</p>
-        <div>
-          <a href="https://github.com/katya-sav">{/* <AiFillGithub /> */}</a>
+      <div className={styles.section}>
+        <p className={styles.copyright}> © 2023 Ekaterina Antonova</p>
+        <div className={styles.social}>
+          <a
+            className={styles.iconMobile}
+            href="https://github.com/katya-sav"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub size={15} />
+          </a>
+          <a
+            className={styles.icon}
+            href="https://github.com/katya-sav"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub size={25} />
+          </a>
+          <a
+            className={styles.iconMobile}
+            href="https://t.me/a_katiko"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaTelegram size={15} />
+          </a>
+          <a
+            className={styles.icon}
+            href="https://t.me/a_katiko"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaTelegram size={25} />
+          </a>
         </div>
       </div>
     </div>
   )
 }
-
-// <p className="footer__copyright">
-// © 2018 Igor Antonov
-// </p>
-// <div className="footer__social">
-// <a className="footer__link" href="https://github.com/IgorAntonov">
-//   <Icon icon="github" width="24px" height="24px" viewBox="0 0 24 24" />
-// </a>
-// <a className="footer__link" href="https://twitter.com/IgorAntonov18">
-//   <Icon icon="twitter" width="24px" height="24px" viewBox="0 0 24 24" />
-// </a>
-// <a className="footer__link" href="https://vk.com/id18941999">
-//   <Icon icon="vk" width="24px" height="24px" viewBox="0 0 24 24" />
-// </a>
-// </div>

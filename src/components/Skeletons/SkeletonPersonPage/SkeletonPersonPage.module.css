@@ -4,6 +4,7 @@
 
 .card {
   display: flex;
+  flex-direction: column;
   height: 750px;
   width: 100%;
   border-radius: 4px;
@@ -19,10 +20,23 @@
   }
 }
 
+.title {
+  height: 20px;
+  width: 120px;
+  margin: 10px;
+  border-radius: 4px;
+  background-color: #c3cce2;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+}
+
 .section {
   width: 100%;
   overflow-y: scroll;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -32,7 +46,14 @@
   }
 
   .card {
+    flex-direction: row;
     height: 1000px;
+  }
+
+  .title {
+    height: 26px;
+    width: 200px;
+    margin: 15px 20px;
   }
 
   .section {
@@ -41,6 +62,12 @@
 }
 
 @media (min-width: 1200px) {
+  .title {
+    height: 32px;
+    width: 250px;
+    margin: 20px;
+  }
+
   .section {
     margin: 20px 0;
   }

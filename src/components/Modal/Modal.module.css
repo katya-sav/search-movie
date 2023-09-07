@@ -1,5 +1,5 @@
 .modalOverlay {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   height: 100%;

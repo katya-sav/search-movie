@@ -6,13 +6,13 @@ import {
   useMovieImagesLoading,
   useAppDispatch,
   useMovieBackdrops,
-  useMovieTitlePoster,
+  useMovieTitle,
 } from '../../../store'
 
 export const useBackdropsPage = (movieId: string | undefined) => {
   const dispatch = useAppDispatch()
 
-  const { title, poster, year } = useMovieTitlePoster(movieId)
+  const { title } = useMovieTitle(movieId)
   const backdrops = useMovieBackdrops(movieId)
   const loading = useMovieImagesLoading()
 
@@ -23,5 +23,5 @@ export const useBackdropsPage = (movieId: string | undefined) => {
     }
   }, [movieId, dispatch])
 
-  return { backdrops, loading, title, poster, year }
+  return { backdrops, loading, title }
 }

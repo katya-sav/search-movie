@@ -1,17 +1,20 @@
-import { useSelector } from 'react-redux'
+import { createSelector } from '@reduxjs/toolkit'
 
 import { RootState } from '../../store'
 import { getListSafe } from '../../../utils'
 
-export const useMovieCast = (movieId: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.moviePersons.movieCast, movieId),
-  )
+export const selectMovieCast = createSelector(
+  [
+    (state: RootState) => state.moviePersons.movieCast,
+    (_: RootState, movieId?: string) => movieId,
+  ],
+  (movieCast, movieId) => getListSafe(movieCast, movieId),
+)
 
-export const useMovieCrew = (movieId: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.moviePersons.movieCrew, movieId),
-  )
-
-export const useMoviePersonsLoading = () =>
-  useSelector((state: RootState) => state.moviePersons.state === 'loading')
+export const selectMovieCrew = createSelector(
+  [
+    (state: RootState) => state.moviePersons.movieCrew,
+    (_: RootState, movieId?: string) => movieId,
+  ],
+  (movieCrew, movieId) => getListSafe(movieCrew, movieId),
+)

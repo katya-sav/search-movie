@@ -1,23 +1,14 @@
 import React, { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-import { SafeImage } from '../SafeImage'
 import { ButtonBack } from '../ButtonBack'
 import styles from './PageTitleBlock.module.css'
 
 type TPageTitleBlockProps = {
   title: string
-  poster: string
-  year: string
   movieId: string
 }
 
-export const PageTitleBlock = ({
-  title,
-  poster,
-  year,
-  movieId,
-}: TPageTitleBlockProps) => {
+export const PageTitleBlock = ({ title, movieId }: TPageTitleBlockProps) => {
   const navigate = useNavigate()
 
   const handleClick = useCallback(() => {
@@ -26,20 +17,12 @@ export const PageTitleBlock = ({
 
   return (
     <div className={styles.container}>
-      <SafeImage
-        src={`https://api.moviesdb.ru/t/p/w185${poster}`}
-        alt={title}
-        className={styles.image}
-        errorClassName={styles.imageError}
+      <h2 className={styles.title}>{title}</h2>
+      <ButtonBack
+        title="Back"
+        onClick={handleClick}
+        className={styles.button}
       />
-      <div className={styles.details}>
-        <h2 className={styles.title}>{title}</h2>
-        <div className={styles.text}>Year: {year}</div>
-        <div className={styles.button}>
-          {' '}
-          <ButtonBack title="Back" onClick={handleClick} />
-        </div>
-      </div>
     </div>
   )
 }

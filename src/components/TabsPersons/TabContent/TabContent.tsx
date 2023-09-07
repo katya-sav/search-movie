@@ -1,11 +1,13 @@
 import React from 'react'
 
+import { TTabName } from '../types'
+
 type TTabContentProps = {
-  id: number
-  activeTab: number
+  title: TTabName
+  activeTab: TTabName
   content: any
 }
 
-export const TabContent = ({ id, activeTab, content }: TTabContentProps) => (
-  <div>{activeTab === id ? <div>{content}</div> : null}</div>
+export const TabContent = ({ title, activeTab, content }: TTabContentProps) => (
+  <div>{activeTab === title ? <div>{content}</div> : null}</div>
 )

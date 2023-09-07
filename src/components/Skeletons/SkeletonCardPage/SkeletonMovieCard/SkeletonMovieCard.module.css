@@ -42,22 +42,6 @@
   background-color: #c3cce2;
 }
 
-.subtitle {
-  height: 10px;
-  width: 70px;
-  margin: 0 5px 5px 0;
-  border-radius: 4px;
-  background-color: #c3cce2;
-}
-
-.description {
-  height: 40px;
-  width: 95%;
-  margin: 0 5px 5px 0;
-  border-radius: 4px;
-  background-color: #c3cce2;
-}
-
 .year {
   height: 10px;
   width: 50px;
@@ -108,18 +92,6 @@
     margin: 0 0 10px 10px;
   }
 
-  .subtitle {
-    height: 16px;
-    width: 100px;
-    margin: 0 0 10px 10px;
-  }
-
-  .description {
-    height: 60px;
-    width: 90%;
-    margin: 0 0 10px 10px;
-  }
-
   .year {
     height: 16px;
     width: 80px;
@@ -158,17 +130,6 @@
   .title {
     height: 32px;
     width: 280px;
-    margin: 0 0 15px 20px;
-  }
-
-  .subtitle {
-    height: 18px;
-    width: 120px;
-    margin: 0 0 15px 20px;
-  }
-
-  .description {
-    height: 80px;
     margin: 0 0 15px 20px;
   }
 

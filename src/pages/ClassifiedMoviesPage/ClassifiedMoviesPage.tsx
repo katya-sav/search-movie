@@ -2,14 +2,19 @@ import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
 import { MoviesList } from '../../components/MoviesList'
-import { ScrollToTop } from '../../utils/components'
 import { useClassifiedMoviesPage } from './hooks'
+import { useScrollToTop } from '../../utils'
 import { SkeletonMoviesList } from '../../components/Skeletons'
+import { TClassifiedMovie } from '../../types'
 
 export const ClassifiedMoviesPage = () => {
   const { pathType } = useParams()
 
-  const { loading, classifiedMovies } = useClassifiedMoviesPage(pathType)
+  const { loading, classifiedMovies } = useClassifiedMoviesPage(
+    pathType as TClassifiedMovie,
+  )
+
+  useScrollToTop()
 
   if (!pathType) {
     return null
@@ -21,16 +26,11 @@ export const ClassifiedMoviesPage = () => {
         <Route
           path="/"
           element={
-            <div>
-              {loading ? (
-                <SkeletonMoviesList />
-              ) : (
-                <div>
-                  <ScrollToTop />
-                  <MoviesList movies={classifiedMovies} />
-                </div>
-              )}
-            </div>
+            loading ? (
+              <SkeletonMoviesList />
+            ) : (
+              <MoviesList movies={classifiedMovies} />
+            )
           }
         />
       </Routes>

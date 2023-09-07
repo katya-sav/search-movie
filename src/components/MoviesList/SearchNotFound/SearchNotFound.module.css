@@ -1,0 +1,12 @@
+.text {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  color: #ebedf2;
+}
+
+@media (min-width: 768px) {
+  .text {
+    font-size: 32px;
+  }
+}

@@ -30,7 +30,7 @@ export const PersonMoviesList = ({
   return (
     <div>
       <h3 className={styles.title}>{title}</h3>
-      <div className={styles.list}>{renderPersonMovie}</div>{' '}
+      <div className={styles.list}>{renderPersonMovie}</div>
     </div>
   )
 }

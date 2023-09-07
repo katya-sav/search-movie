@@ -1,32 +1,36 @@
 .container {
   margin: 10px 0 0 5px;
-  padding: 10px;
-  background-color: #2a2b42;
   border-radius: 4px;
 }
 
 .title {
-  margin-bottom: 10px;
-  color: #aaa7f2;
-  font-size: 14px;
+  margin-bottom: 5px;
+  color: #ebedf2;
+  font-size: 16px;
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
+  padding: 5px;
+  background-color: #2a2b42;
+  border-radius: 4px;
 }
 
 @media (min-width: 768px) {
   .container {
     margin: 0;
-    padding: 0;
     background-color: transparent;
   }
 
   .title {
     margin-bottom: 15px;
-    color: #ebedf2;
     font-size: 20px;
+  }
+
+  .list {
+    padding: 0;
+    background-color: transparent;
   }
 }
 

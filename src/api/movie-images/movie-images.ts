@@ -18,6 +18,7 @@ export const getMovieImages = async (
 ): Promise<TGetMovieImagesResponse> => {
   try {
     const baseUrl = 'https://api.moviesdb.ru'
+
     const movieImagesRes = await fetch(`${baseUrl}/3/movie/${movieId}/images`, {
       method: 'GET',
       headers: { accept: 'application/json' },

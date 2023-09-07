@@ -1,13 +1,8 @@
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-left: 10px;
-}
-
-.title {
-  height: 20px;
-  width: 80px;
-  margin: 10px 0;
-  border-radius: 4px;
-  background-color: #c3cce2;
 }
 
 .photo {
@@ -40,12 +35,7 @@
 @media (min-width: 768px) {
   .section {
     margin-left: 20px;
-  }
-
-  .title {
-    height: 26px;
-    width: 200px;
-    margin: 15px 0;
+    align-items: flex-start;
   }
 
   .photo {
@@ -61,12 +51,6 @@
 }
 
 @media (min-width: 1200px) {
-  .title {
-    height: 32px;
-    width: 250px;
-    margin: 20px 0;
-  }
-
   .photo {
     width: 320px;
     height: 450px;

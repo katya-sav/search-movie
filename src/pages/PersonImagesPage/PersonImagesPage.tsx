@@ -20,14 +20,11 @@ export const PersonImagesPage = () => {
         <Route
           path="/"
           element={
-            <>
-              {' '}
-              {loading ? (
-                <SkeletonPersonImagesPage />
-              ) : (
-                <PersonImagesList personImages={images} personId={personId} />
-              )}
-            </>
+            loading ? (
+              <SkeletonPersonImagesPage />
+            ) : (
+              <PersonImagesList personImages={images} personId={personId} />
+            )
           }
         />
       </Routes>

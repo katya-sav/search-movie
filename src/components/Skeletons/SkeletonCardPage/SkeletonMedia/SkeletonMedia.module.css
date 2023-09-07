@@ -34,7 +34,7 @@
 }
 
 .buttonBig {
-  height: 18px;
+  height: 30px;
   width: 80px;
   border-radius: 4px;
   animation: element-loading 1.5s linear infinite alternate;
@@ -128,7 +128,6 @@
   }
 
   .buttonBig {
-    height: 28px;
     width: 140px;
   }
 

@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux'
+import { createSelector } from '@reduxjs/toolkit'
 
 import { getListSafe } from '../../../utils'
 import { RootState } from '../../store'
 
-export const usePersonImages = (personId: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.personImages.personImages, personId),
-  )
-
-export const usePersonImagesLoading = () =>
-  useSelector((state: RootState) => state.personImages.state === 'loading')
+export const selectPersonImages = createSelector(
+  [
+    (state: RootState) => state.personImages.personImages,
+    (_: RootState, personId?: string) => personId,
+  ],
+  (personImages, personId) => getListSafe(personImages, personId),
+)

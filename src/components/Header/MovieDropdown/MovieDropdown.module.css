@@ -11,17 +11,14 @@
 }
 
 .item {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
   border: none;
   background-color: transparent;
   padding: 4px;
   font-size: 12px;
   cursor: pointer;
-  color: #2a2b42;
-}
-
-.item:hover {
-  color: #6f6bf2;
-  border-radius: 4px;
 }
 
 @media (min-width: 768px) {

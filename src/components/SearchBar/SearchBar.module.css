@@ -19,12 +19,6 @@
   background-color: #ebedf2;
 }
 
-.input:active {
-  background-color: #ebedf2;
-  border: 2px solid #2a2b42;
-  border-radius: 10px;
-}
-
 @media (min-width: 768px) {
   .input {
     height: 40px;

@@ -1,6 +1,8 @@
 .button {
   margin-right: 20px;
+  padding: 5px;
   border: none;
+  border-bottom: 2px solid transparent;
   font-size: 16px;
   color: #ebedf2;
   background-color: transparent;
@@ -8,38 +10,22 @@
 }
 
 .buttonActive {
-  margin-right: 20px;
-  padding: 5px;
-  padding-left: 0;
-  background-color: transparent;
-  color: #ebedf2;
-  border: none;
   border-bottom: 2px solid #2a2b42;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 @media (min-width: 768px) {
   .button {
-    margin-right: 20px;
     font-size: 20px;
+    border-bottom: 3px solid transparent;
   }
 
   .buttonActive {
-    margin-right: 20px;
-    padding: 5px;
-    padding-left: 0;
-    font-size: 20px;
     border-bottom: 3px solid #2a2b42;
   }
 }
 
 @media (min-width: 1200px) {
   .button {
-    font-size: 22px;
-  }
-
-  .buttonActive {
     font-size: 22px;
   }
 }

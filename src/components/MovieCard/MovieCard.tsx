@@ -1,10 +1,9 @@
 import React from 'react'
 
 import { CardPoster } from './CardPoster '
-import { CardHeader } from './CardHeader'
 import { CardMain } from './CardMain'
 import { CardRating } from './CardRating'
-
+import { getValidateText } from '../../utils'
 import { TMovieCard } from '../../types'
 
 import styles from './MovieCard.module.css'
@@ -22,7 +21,7 @@ export const MovieCard = ({ movieCard }: TMovieCardProps) => {
     <div className={styles.card}>
       <CardPoster movieCard={movieCard} />
       <div className={styles.container}>
-        <CardHeader movieCard={movieCard} />
+        <div className={styles.title}>{getValidateText(movieCard.title)}</div>
         <CardMain movieCard={movieCard} />
       </div>
       <div className={styles.rating}>

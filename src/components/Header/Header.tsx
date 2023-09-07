@@ -17,16 +17,18 @@ export const Header = () => {
     [navigate],
   )
 
+  const handleLogoClick = useCallback(() => {
+    navigate('/', { replace: false })
+  }, [navigate])
+
+  const isMainPage = pathname === '/'
+
   return (
     <div className={styles.header}>
-      <button
-        type="button"
-        className={styles.name}
-        onClick={() => navigate('/', { replace: false })}
-      >
+      <button type="button" className={styles.name} onClick={handleLogoClick}>
         Search Movie
       </button>
-      {pathname !== '/' ? <SearchBar onSubmit={handleSearchSubmit} /> : null}
+      {!isMainPage ? <SearchBar onSubmit={handleSearchSubmit} /> : null}
       <MovieDropdown />
     </div>
   )

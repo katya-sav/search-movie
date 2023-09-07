@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux'
+import { createSelector } from '@reduxjs/toolkit'
 
 import { RootState } from '../../store'
 import { getListSafe } from '../../../utils'
 
-export const useClassifiedMovies = (pathType: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.classifiedMovies.movies, pathType),
-  )
-
-export const useClassifiedMoviesLoading = () =>
-  useSelector((state: RootState) => state.classifiedMovies.state === 'loading')
+export const selectclassifiedMovies = createSelector(
+  [
+    (state: RootState) => state.classifiedMovies.movies,
+    (_: RootState, pathType?: string) => pathType,
+  ],
+  (movies, pathType) => getListSafe(movies, pathType),
+)

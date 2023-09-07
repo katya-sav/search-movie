@@ -1,39 +1,31 @@
 .button {
-  border: none;
-  font-size: 10px;
   padding: 5px;
-  color: #ebedf2;
+  border: none;
+  border-bottom: 2px solid transparent;
   background-color: transparent;
+  font-size: 12px;
+  color: #ebedf2;
   cursor: pointer;
 }
 
 .buttonActive {
-  background-color: transparent;
-  color: #ebedf2;
-  border: none;
-  padding: 5px;
-  border-bottom: 1px solid #2a2b42;
-  font-size: 10px;
-  cursor: pointer;
+  border-bottom: 2px solid #2a2b42;
 }
 
 @media (min-width: 768px) {
   .button {
     font-size: 16px;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
   }
 
   .buttonActive {
-    font-size: 16px;
     border-bottom: 3px solid #2a2b42;
   }
 }
 
 @media (min-width: 1200px) {
   .button {
-    font-size: 18px;
-  }
-
-  .buttonActive {
     font-size: 18px;
   }
 }

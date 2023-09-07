@@ -3,14 +3,14 @@ import { useEffect } from 'react'
 import {
   useAppDispatch,
   useMovieCardLoading,
-  useMovieTitlePoster,
+  useMovieTitle,
 } from '../../../store'
 import { fetchMovieCard } from '../../../store/slices/movie-card'
 
 export const useCastAndCrewPage = (movieId: string | undefined) => {
   const dispatch = useAppDispatch()
 
-  const { title, poster, year } = useMovieTitlePoster(movieId)
+  const { title } = useMovieTitle(movieId)
 
   const loading = useMovieCardLoading()
 
@@ -20,5 +20,5 @@ export const useCastAndCrewPage = (movieId: string | undefined) => {
     }
   }, [movieId, dispatch])
 
-  return { loading, title, poster, year }
+  return { loading, title }
 }

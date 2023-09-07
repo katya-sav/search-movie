@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 
 import { MovieImagesList } from '../../components/MovieImagesList'
-import { ScrollToTop } from '../../utils/components'
+import { useScrollToTop } from '../../utils'
 import { PageTitleBlock } from '../../components/PageTitleBlock'
 import { SkeletonImagesPage } from '../../components/Skeletons'
 
@@ -12,7 +12,9 @@ import { useBackdropsPage } from './hooks'
 export const BackdropsPage = () => {
   const { movieId } = useParams()
 
-  const { backdrops, loading, title, poster, year } = useBackdropsPage(movieId)
+  useScrollToTop()
+
+  const { backdrops, loading, title } = useBackdropsPage(movieId)
 
   if (!movieId) {
     return null
@@ -24,32 +26,21 @@ export const BackdropsPage = () => {
         <Route
           path="/"
           element={
-            <>
-              <ScrollToTop />
-              {loading ? (
-                <SkeletonImagesPage width={480} />
-              ) : (
+            loading ? (
+              <SkeletonImagesPage width={480} />
+            ) : (
+              <div>
+                {title && <PageTitleBlock title={title} movieId={movieId} />}
                 <div>
-                  {' '}
-                  {title && poster && year && (
-                    <PageTitleBlock
-                      title={title}
-                      poster={poster}
-                      year={year}
-                      movieId={movieId}
-                    />
-                  )}
-                  <div>
-                    <MovieImagesList
-                      images={backdrops}
-                      size="original"
-                      className={styles.list}
-                      width={500}
-                    />
-                  </div>
+                  <MovieImagesList
+                    images={backdrops}
+                    size="original"
+                    className={styles.list}
+                    width={500}
+                  />
                 </div>
-              )}
-            </>
+              </div>
+            )
           }
         />
       </Routes>

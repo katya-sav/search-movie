@@ -41,8 +41,10 @@ export const PersonProfile = ({ personProfile }: TPersonProfileProps) => {
     <div className={styles.container}>
       <div>
         <div className={styles.title}> {personProfile.name}</div>
-        <PersonPhoto personProfile={personProfile} />
-        <PersonalInformation personProfile={personProfile} />
+        <div className={styles.topSection}>
+          <PersonPhoto personProfile={personProfile} />
+          <PersonalInformation personProfile={personProfile} />
+        </div>
       </div>
       <div className={styles.section}>
         <PersonBiography personProfile={personProfile} />

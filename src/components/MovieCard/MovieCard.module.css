@@ -13,6 +13,11 @@
   padding: 10px 0 0 5px;
 }
 
+.title {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
 .rating {
   display: none;
 }
@@ -20,14 +25,24 @@
 @media (min-width: 768px) {
   .card {
     margin: 20px 15px 10px;
-    justify-content: space-between;
   }
 
   .container {
+    width: 90%;
     padding: 15px 0 15px 15px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    font-size: 26px;
   }
 
   .rating {
     display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .title {
+    font-size: 32px;
   }
 }

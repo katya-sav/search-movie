@@ -1,17 +1,20 @@
-import { useSelector } from 'react-redux'
+import { createSelector } from '@reduxjs/toolkit'
 
 import { getListSafe } from '../../../utils'
 import { RootState } from '../../store'
 
-export const useMovieBackdrops = (movieId: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.movieImages.backdrops, movieId),
-  )
+export const selectMovieBackdrops = createSelector(
+  [
+    (state: RootState) => state.movieImages.backdrops,
+    (_: RootState, movieId?: string) => movieId,
+  ],
+  (backdrops, movieId) => getListSafe(backdrops, movieId),
+)
 
-export const useMoviePosters = (movieId: string | undefined) =>
-  useSelector((state: RootState) =>
-    getListSafe(state.movieImages.posters, movieId),
-  )
-
-export const useMovieImagesLoading = () =>
-  useSelector((state: RootState) => state.movieImages.state === 'loading')
+export const selectMoviePosters = createSelector(
+  [
+    (state: RootState) => state.movieImages.posters,
+    (_: RootState, movieId?: string) => movieId,
+  ],
+  (posters, movieId) => getListSafe(posters, movieId),
+)

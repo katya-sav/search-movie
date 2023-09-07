@@ -5,13 +5,14 @@ import { TabNavItem } from './TabNavItem'
 import { TabContent } from './TabContent'
 import { PersonsList } from '../PersonsList'
 import { useTabsPersons } from './hooks'
+import { TTabName } from './types'
 
 import styles from './TabsPersons.module.css'
 
 export const TabsPersons = () => {
   const { movieId } = useParams()
 
-  const [activeTab, setActiveTab] = useState(1)
+  const [activeTab, setActiveTab] = useState<TTabName>('Cast')
 
   const { cast, crew } = useTabsPersons(movieId)
 
@@ -25,13 +26,11 @@ export const TabsPersons = () => {
         <h3 className={styles.title}>Full Cast and Crew</h3>
         <div className={styles.nav}>
           <TabNavItem
-            id={1}
             title="Cast"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
           <TabNavItem
-            id={2}
             title="Crew"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
@@ -40,7 +39,7 @@ export const TabsPersons = () => {
       </div>
       <div>
         <TabContent
-          id={1}
+          title="Cast"
           activeTab={activeTab}
           content={
             <PersonsList
@@ -51,7 +50,7 @@ export const TabsPersons = () => {
           }
         />
         <TabContent
-          id={2}
+          title="Crew"
           activeTab={activeTab}
           content={
             <PersonsList

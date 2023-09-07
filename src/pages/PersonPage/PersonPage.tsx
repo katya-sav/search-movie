@@ -20,14 +20,11 @@ export const PersonPage = () => {
         <Route
           path="/"
           element={
-            <>
-              {' '}
-              {loading ? (
-                <SkeletonPersonPage personProfile={person} />
-              ) : (
-                <PersonProfile personProfile={person} />
-              )}
-            </>
+            loading ? (
+              <SkeletonPersonPage />
+            ) : (
+              <PersonProfile personProfile={person} />
+            )
           }
         />
       </Routes>

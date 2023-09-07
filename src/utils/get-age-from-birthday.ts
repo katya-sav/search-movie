@@ -1,6 +1,10 @@
 import { differenceInYears, parse } from 'date-fns'
 
-export const getAgeFromBirthday = (birthDate: string): number => {
+export const getAgeFromBirthday = (birthDate: string | null): number | null => {
+  if (!birthDate) {
+    return null
+  }
+
   const date = parse(birthDate, 'yyyy-MM-dd', new Date())
   const age = differenceInYears(new Date(), date)
   return age

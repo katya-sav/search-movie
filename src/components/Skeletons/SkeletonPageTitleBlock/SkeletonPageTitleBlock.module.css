@@ -1,18 +1,15 @@
 .wrapper {
-  margin: 10px;
-}
-
-.card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px;
-  width: 100%;
-  border-radius: 4px;
-  animation: card-loading 1.5s linear infinite alternate;
+  margin: 15px 10px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  animation: wrapper-loading 1.5s linear infinite alternate;
 }
 
-@keyframes card-loading {
+@keyframes wrapper-loading {
   0% {
     background-color: hsl(218, 37%, 81%);
   }
@@ -21,38 +18,17 @@
   }
 }
 
-.image {
-  width: 120px;
-  height: 180px;
-  color: #c3cce2;
-}
-
-.details {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-}
-
 .title {
-  height: 20px;
+  height: 16px;
   width: 150px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-color: #c3cce2;
-}
-
-.year {
-  height: 14px;
-  width: 60px;
-  margin-bottom: 10px;
   border-radius: 4px;
   background-color: #c3cce2;
 }
 
 .button {
-  height: 26px;
+  height: 20px;
   width: 70px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   border-radius: 4px;
   background-color: #c3cce2;
 }
@@ -60,65 +36,24 @@
 @media (min-width: 768px) {
   .wrapper {
     margin: 20px;
-  }
-
-  .card {
-    height: 230px;
-  }
-
-  .image {
-    width: 140px;
-    height: 200px;
-  }
-
-  .details {
-    margin-left: 20px;
+    padding: 20px;
   }
 
   .title {
     height: 26px;
     width: 300px;
-    margin-bottom: 15px;
-  }
-
-  .year {
-    height: 20px;
-    width: 90px;
-    margin-bottom: 15px;
   }
 
   .button {
     height: 30px;
     width: 100px;
-    margin-bottom: 15px;
+    margin-top: 20px;
   }
 }
 
 @media (min-width: 1200px) {
-  .card {
-    height: 300px;
-  }
-
-  .image {
-    width: 185px;
-    height: 280px;
-  }
-
-  .details {
-    margin-left: 30px;
-  }
-
   .title {
     height: 32px;
     width: 400px;
-    margin-bottom: 20px;
-  }
-
-  .year {
-    margin-bottom: 20px;
-  }
-
-  .button {
-    margin-bottom: 20px;
   }
 }

@@ -1,24 +1,25 @@
 import React from 'react'
 
 import { ButtonRight } from '../../ButtonRight'
+import { TTabName } from '../types'
 import styles from './TabViewAll.module.css'
 
 type TTabViewAllProps = {
-  id: number
-  title: string
-  activeTab: number
+  title: TTabName
+  text: string
+  activeTab: TTabName
   onClick: () => void
 }
 
 export const TabViewAll = ({
-  id,
   title,
+  text,
   activeTab,
   onClick,
 }: TTabViewAllProps) => (
   <ButtonRight
-    className={activeTab === id ? `${styles.button}` : `${styles.buttonHidden}`}
-    title={title}
+    className={activeTab === title ? styles.button : styles.buttonHidden}
+    title={text}
     onClick={onClick}
   />
 )

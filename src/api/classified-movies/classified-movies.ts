@@ -1,4 +1,4 @@
-import { TMovie } from '../../types'
+import { TMovie, TClassifiedMovie } from '../../types'
 import { mapClassifiedMovies } from './map-classified-movies'
 
 type TGetClassifiedMoviesSuccess = {
@@ -15,15 +15,12 @@ type TGetClassifiedMoviesResponse =
   | TGetClassifiedMoviesSuccess
   | TGetClassifiedMoviesError
 
-type TClassifiedMovies = {
-  pathType: 'popular' | 'top_rated' | 'upcoming' | 'now_playing'
-}
-
 export const getClassifiedMovies = async (
-  pathType: TClassifiedMovies,
+  pathType: TClassifiedMovie,
 ): Promise<TGetClassifiedMoviesResponse> => {
   try {
     const baseUrl = 'https://api.moviesdb.ru'
+
     const classifiedMoviesRes = await fetch(
       `${baseUrl}/3/movie/${pathType}?language=en-US&page=1`,
       {

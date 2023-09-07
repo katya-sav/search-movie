@@ -6,8 +6,9 @@ import {
   useAppDispatch,
   useClassifiedMovies,
 } from '../../../store'
+import { TClassifiedMovie } from '../../../types'
 
-export const useClassifiedMoviesPage = (pathType: string | undefined) => {
+export const useClassifiedMoviesPage = (pathType?: TClassifiedMovie) => {
   const dispatch = useAppDispatch()
 
   const classifiedMovies = useClassifiedMovies(pathType)

@@ -4,33 +4,23 @@ import { SkeletonPersonPhoto } from './SkeletonPersonPhoto'
 import { SkeletonPersonalInformation } from './SkeletonPersonalInformation'
 import { SkeletonPersonBiography } from './SkeletonPersonBiography'
 import { SkeletonPersonMoviesList } from './SkeletonPersonMoviesList'
-import { TPersonProfile } from '../../../types'
 
 import styles from './SkeletonPersonPage.module.css'
 
-type TSkeletonPersonPageProps = {
-  personProfile: TPersonProfile | null
-}
-
-export const SkeletonPersonPage = ({
-  personProfile,
-}: TSkeletonPersonPageProps) => {
-  if (!personProfile) {
-    return null
-  }
-
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.card}>
-        <div>
+export const SkeletonPersonPage = () => (
+  <div className={styles.wrapper}>
+    <div className={styles.card}>
+      <div>
+        <div className={styles.title}> </div>
+        <div className={styles.topSection}>
           <SkeletonPersonPhoto />
-          <SkeletonPersonalInformation personProfile={personProfile} />
-        </div>
-        <div className={styles.section}>
-          <SkeletonPersonBiography />
-          <SkeletonPersonMoviesList />
+          <SkeletonPersonalInformation />
         </div>
       </div>
+      <div className={styles.section}>
+        <SkeletonPersonBiography />
+        <SkeletonPersonMoviesList />
+      </div>
     </div>
-  )
-}
+  </div>
+)

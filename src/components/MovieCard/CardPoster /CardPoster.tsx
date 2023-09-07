@@ -14,7 +14,6 @@ type TCardPosterProps = {
 export const CardPoster = ({ movieCard }: TCardPosterProps) => (
   <div className={styles.wrapper}>
     <div className={styles.poster}>
-      {' '}
       <SafeImage
         src={`https://api.moviesdb.ru/t/p/w342${movieCard.poster}`}
         alt={movieCard.title}
