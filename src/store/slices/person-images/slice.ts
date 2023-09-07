@@ -6,7 +6,13 @@ import { TPersonImagesSlice } from './types'
 
 export const fetchPersonImages = createThunk(
   'personImages/getPersonImages',
-  async (personId: string) => {
+  async (personId: string, { getState }) => {
+    const personImages = getState().personImages.personImages[personId]
+
+    if (personImages) {
+      return { personId, data: personImages }
+    }
+
     const response = await getPersonImages(personId)
 
     if (response.type === 'success') {

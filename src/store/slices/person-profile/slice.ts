@@ -6,7 +6,13 @@ import { TPersonProfileSlice } from './types'
 
 export const fetchPersonProfile = createThunk(
   'personProfile/getPersonProfile',
-  async (personId: string) => {
+  async (personId: string, { getState }) => {
+    const personProfile = getState().personProfile.personProfiles[personId]
+
+    if (personProfile) {
+      return personProfile
+    }
+
     const response = await getPersonProfile(personId)
 
     if (response.type === 'success') {

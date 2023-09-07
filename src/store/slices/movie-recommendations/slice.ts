@@ -6,7 +6,14 @@ import { TMovieRecommendationsSlice } from './types'
 
 export const fetchMovieRecommendations = createThunk(
   'movieRecommendations/getMovieRecommendations',
-  async (movieId: string) => {
+  async (movieId: string, { getState }) => {
+    const recommendations =
+      getState().movieRecommendations.recommendations[movieId]
+
+    if (recommendations) {
+      return { movieId, data: recommendations }
+    }
+
     const response = await getMovieRecommendations(movieId)
 
     if (response.type === 'success') {

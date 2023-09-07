@@ -6,7 +6,14 @@ import { TMovieImagesSlice } from './types'
 
 export const fetchMovieImages = createThunk(
   'movieImages/getMovieImages',
-  async (movieId: string) => {
+  async (movieId: string, { getState }) => {
+    const backdrops = getState().movieImages.backdrops[movieId]
+    const posters = getState().movieImages.posters[movieId]
+
+    if (backdrops && posters) {
+      return { movieId, data: { backdrops, posters } }
+    }
+
     const response = await getMovieImages(movieId)
 
     if (response.type === 'success') {

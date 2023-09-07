@@ -6,7 +6,12 @@ import { TMoviesSliceState } from '../types'
 
 export const fetchMoviesByKeyword = createThunk(
   'moviesByKeyword/getMoviesByKeyword',
-  async (keyId: string) => {
+  async (keyId: string, { getState }) => {
+    const moviesByKeyword = getState().moviesByKeyword.movies[keyId]
+
+    if (moviesByKeyword) {
+      return { keyId, data: moviesByKeyword }
+    }
     const response = await getMoviesListByKeyword(keyId)
 
     if (response.type === 'success') {

@@ -6,7 +6,14 @@ import { TPersonMoviesSlice } from './types'
 
 export const fetchPersonMovies = createThunk(
   'personMovies/getPersonMovies',
-  async (personId: string) => {
+  async (personId: string, { getState }) => {
+    const cast = getState().personMovies.personProfCast[personId]
+    const crew = getState().personMovies.personProfCrew[personId]
+
+    if (cast && crew) {
+      return { personId, data: { cast, crew } }
+    }
+
     const response = await getPersonMovies(personId)
 
     if (response.type === 'success') {

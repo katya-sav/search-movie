@@ -6,7 +6,12 @@ import { TMovieCardSlice } from './types'
 
 export const fetchMovieCard = createThunk(
   'movieCard/getMovieCard',
-  async (movieId: string) => {
+  async (movieId: string, { getState }) => {
+    const movie = getState().movieCard.movieCards[movieId]
+    if (movie) {
+      return movie
+    }
+
     const response = await getMovieCard(movieId)
 
     if (response.type === 'success') {

@@ -7,7 +7,13 @@ import { TClassifiedMovie } from '../../../types'
 
 export const fetchClassifiedMovies = createThunk(
   'movies/searchMovies',
-  async (pathType: TClassifiedMovie) => {
+  async (pathType: TClassifiedMovie, { getState }) => {
+    const classifiedMovies = getState().classifiedMovies.movies[pathType]
+
+    if (classifiedMovies) {
+      return { query: pathType, data: classifiedMovies }
+    }
+
     const response = await getClassifiedMovies(pathType)
 
     if (response.type === 'success') {

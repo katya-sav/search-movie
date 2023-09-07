@@ -6,7 +6,13 @@ import { TMovieCompanySlice } from './types'
 
 export const fetchMovieCompany = createThunk(
   'movieCompany/getMovieCompany',
-  async (companyId: string) => {
+  async (companyId: string, { getState }) => {
+    const movieCompany = getState().movieCompany.companies[companyId]
+
+    if (movieCompany) {
+      return movieCompany
+    }
+
     const response = await getMovieCompany(companyId)
 
     if (response.type === 'success') {
